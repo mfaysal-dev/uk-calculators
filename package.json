@@ -1,0 +1,2 @@
+{ "name": "uk-calculators", "version": "1.0.0", "private": true, "license": "MIT",
+  "scripts": { "build": "node build.js", "test": "node --test tests/" }, "engines": { "node": ">=18" } }

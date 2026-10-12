@@ -1,0 +1,37 @@
+[
+ {
+  "slug": "stamp-duty-calculator",
+  "title": "Stamp Duty Calculator UK 2026/27 – SDLT, LBTT & LTT",
+  "h1": "Stamp Duty Calculator (England, NI, Scotland & Wales)",
+  "desc": "Free UK stamp duty calculator for 2026/27. Work out SDLT (England & Northern Ireland), LBTT (Scotland) and LTT (Wales) with first-time buyer relief and second-home surcharges.",
+  "ico": "🏠"
+ },
+ {
+  "slug": "student-loan-repayment-calculator",
+  "title": "Student Loan Repayment Calculator UK 2026/27 – Plan 1, 2, 4, 5 & Postgrad",
+  "h1": "Student Loan Repayment Calculator",
+  "desc": "Calculate your UK student loan repayments for 2026/27. Supports Plan 1, Plan 2, Plan 4 (Scotland), Plan 5 and Postgraduate Loans – yearly, monthly or weekly.",
+  "ico": "🎓"
+ },
+ {
+  "slug": "vat-calculator",
+  "title": "VAT Calculator UK – Add or Remove VAT at 20%, 5% or 0%",
+  "h1": "VAT Calculator (Add or Remove VAT)",
+  "desc": "Free UK VAT calculator. Add VAT to a net price or remove VAT from a gross price at the 20% standard, 5% reduced or 0% zero rate.",
+  "ico": "🧾"
+ },
+ {
+  "slug": "mortgage-calculator",
+  "title": "Mortgage Calculator UK – Monthly Repayments & Affordability",
+  "h1": "Mortgage Repayment & Affordability Calculator",
+  "desc": "Free UK mortgage calculator. Work out monthly repayments for repayment or interest-only mortgages, total interest, a rate-rise stress test and how much you could borrow.",
+  "ico": "🏦"
+ },
+ {
+  "slug": "car-tax-calculator",
+  "title": "Car Tax Calculator UK 2026/27 – VED by CO2, Fuel & List Price",
+  "h1": "Car Tax (VED) Calculator",
+  "desc": "Work out UK car tax (Vehicle Excise Duty) from 1 April 2026: first-year rate by CO2, the £200 standard rate, the £440 expensive car supplement and EV tax.",
+  "ico": "🚗"
+ }
+]
