@@ -1,11 +1,13 @@
 # UK Calculators (2026/27)
 
-Five free, fast, privacy-friendly UK calculators. Everything runs in the browser – no tracking, no data sent anywhere.
+Seven free, fast, privacy-friendly UK calculators. Everything runs in the browser – no tracking, no data sent anywhere.
 
 **Live:** https://uk-calculators.vercel.app · **Author:** [Mahir Faysal – mfaysal.com](https://mfaysal.com/)
 
 | Tool | What it does |
 | --- | --- |
+| [Take-Home Pay](https://uk-calculators.vercel.app/take-home-pay-calculator/) | Income tax (rUK & Scotland), National Insurance, pension (net pay / salary sacrifice), student loan – yearly, monthly, weekly |
+| [Minimum Wage](https://uk-calculators.vercel.app/minimum-wage-calculator/) | Check hourly pay against the April 2026 National Living Wage / NMW by age and apprenticeship, with shortfall |
 | [Stamp Duty](https://uk-calculators.vercel.app/stamp-duty-calculator/) | SDLT (England & NI), LBTT (Scotland), LTT (Wales), first-time buyer relief, second-home & non-resident surcharges |
 | [Student Loan](https://uk-calculators.vercel.app/student-loan-repayment-calculator/) | Plan 1, 2, 4, 5 and Postgraduate Loan repayments – yearly, monthly, weekly |
 | [VAT](https://uk-calculators.vercel.app/vat-calculator/) | Add or remove VAT at 20%, 5% or 0% |

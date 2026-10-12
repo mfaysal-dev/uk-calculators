@@ -43,7 +43,16 @@
       standard: 200, supplement: 440, threshold: 40000, thresholdEV: 50000,
       sixMonth: 110, ddMonthlyTotal: 210, ddSixMonthly: 105
     },
-    vat: { standard: .20, reduced: .05, zero: 0 }
+    vat: { standard: .20, reduced: .05, zero: 0 },
+    // Income tax 2026/27 – bands are on TAXABLE income (after Personal Allowance)
+    incomeTax: { pa: 12570, taperFrom: 100000,
+      ruk: [[37700, .20], [125140, .40], [INF, .45]],
+      sco: [[3967, .19], [16956, .20], [31092, .21], [62430, .42], [125140, .45], [INF, .48]] },
+    // Employee Class 1 NI 2026/27 (annual equivalents of PT £242/wk and UEL £967/wk as used by HMRC: £12,570 / £50,270)
+    ni: { pt: 12570, uel: 50270, main: .08, upper: .02 },
+    // National Minimum Wage / National Living Wage hourly rates
+    nmw: { '2026': { from: '1 April 2026', a21: 12.71, a18: 10.85, u18: 8.00, app: 8.00 },
+           '2025': { from: '1 April 2025', a21: 12.21, a18: 10.00, u18: 7.55, app: 7.55 } }
   };
 
   function stampDuty(o) {
@@ -122,6 +131,45 @@
              sixYearTotal: first + std * 5 };
   }
 
-  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax };
+  // Take-home pay (annual). o: salary, region 'ruk'|'sco', pension %, pensionType 'none'|'net'|'sacrifice', plans[], pg
+  function takeHome(o) {
+    var T = RATES.incomeTax, N = RATES.ni, gross = Math.max(0, +o.salary || 0);
+    var pct = Math.max(0, +o.pension || 0) / 100, ptype = o.pensionType || 'none';
+    var pension = ptype === 'none' ? 0 : r2(gross * pct);
+    var niPay = ptype === 'sacrifice' ? gross - pension : gross;       // sacrifice lowers NI-able pay
+    var taxPay = gross - pension;                                     // both net pay and sacrifice lower taxable pay
+    var pa = Math.max(0, T.pa - Math.floor(Math.max(0, taxPay - T.taperFrom) / 2));
+    var taxable = Math.max(0, taxPay - pa);
+    var bands = o.region === 'sco' ? T.sco : T.ruk;
+    var it = banded(taxable, bands);
+    var ni = r2(Math.max(0, Math.min(niPay, N.uel) - N.pt) * N.main + Math.max(0, niPay - N.uel) * N.upper);
+    var sl = studentLoan({ income: niPay, plans: o.plans || [], pg: o.pg, period: 'year' });
+    var net = r2(gross - pension - it.tax - ni - sl.total);
+    return { gross: r2(gross), pension: pension, personalAllowance: pa, taxable: r2(taxable), incomeTax: it.tax, rows: it.rows,
+      ni: ni, studentLoan: sl.total, net: net, monthly: r2(net / 12), weekly: r2(net / 52),
+      marginal: marginalRate(o), effectiveRate: gross ? r2((it.tax + ni) / gross * 100) : 0 };
+  }
+  function marginalRate(o) {
+    // simple numeric marginal rate on tax + NI for the next £100
+    if (o._m) return null;
+    var a = takeHomeRaw(o, 0), b = takeHomeRaw(o, 100);
+    return r2((1 - (b - a) / 100) * 100);
+  }
+  function takeHomeRaw(o, add) { var c = {}; for (var k in o) c[k] = o[k]; c._m = 1; c.salary = (+o.salary || 0) + add; return takeHome(c).net; }
+
+  // Minimum wage check. o: age, apprentice, firstYear, hourly, hours (per week), year '2026'|'2025'
+  function minWage(o) {
+    var R = RATES.nmw[o.year || '2026'], age = +o.age || 0, band, rate;
+    if (o.apprentice && (age < 19 || o.firstYear)) { band = 'Apprentice rate'; rate = R.app; }
+    else if (age >= 21) { band = 'National Living Wage (21 and over)'; rate = R.a21; }
+    else if (age >= 18) { band = 'National Minimum Wage (18 to 20)'; rate = R.a18; }
+    else { band = 'National Minimum Wage (under 18)'; rate = R.u18; }
+    var hours = Math.max(0, +o.hours || 0), hourly = +o.hourly || 0;
+    var res = { band: band, rate: rate, from: R.from, weeklyMin: r2(rate * hours), yearlyMin: r2(rate * hours * 52), monthlyMin: r2(rate * hours * 52 / 12) };
+    if (hourly) { res.ok = hourly >= rate; res.shortPerHour = r2(Math.max(0, rate - hourly)); res.shortPerWeek = r2(res.shortPerHour * hours); res.shortPerYear = r2(res.shortPerHour * hours * 52); }
+    return res;
+  }
+
+  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax, takeHome: takeHome, minWage: minWage };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.UKCalc = api;
 })(this);

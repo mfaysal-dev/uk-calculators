@@ -33,5 +33,19 @@
   "h1": "Car Tax (VED) Calculator",
   "desc": "Work out UK car tax (Vehicle Excise Duty) from 1 April 2026: first-year rate by CO2, the £200 standard rate, the £440 expensive car supplement and EV tax.",
   "ico": "🚗"
+ },
+ {
+  "slug": "take-home-pay-calculator",
+  "title": "Take-Home Pay Calculator UK 2026/27 – Income Tax, NI & Pension",
+  "h1": "Take-Home Pay Calculator (Income Tax & National Insurance)",
+  "desc": "Free UK salary calculator for 2026/27. See your take-home pay after income tax (England, Wales, NI or Scotland), National Insurance, pension and student loan – yearly, monthly and weekly.",
+  "ico": "💷"
+ },
+ {
+  "slug": "minimum-wage-calculator",
+  "title": "Minimum Wage Calculator UK April 2026 – Am I Paid Enough?",
+  "h1": "Minimum Wage Checker (National Living Wage 2026)",
+  "desc": "Check your hourly pay against the UK National Living Wage (£12.71) and National Minimum Wage rates from 1 April 2026 for your age and apprenticeship, and see any shortfall.",
+  "ico": "⏱️"
  }
 ]

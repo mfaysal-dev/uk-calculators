@@ -89,6 +89,45 @@ const tools = [
   ${[['0','£10','£10'],['1–50','£115','£135'],['51–75','£135','£280'],['76–90','£280','£365'],['91–100','£365','£405'],['101–110','£405','£455'],['111–130','£455','£560'],['131–150','£560','£1,410'],['151–170','£1,410','£2,270'],['171–190','£2,270','£3,420'],['191–225','£3,420','£4,850'],['226–255','£4,850','£5,690'],['Over 255','£5,690','£5,690']].map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table>`,
   sources:[['GOV.UK / DVLA – V149 rates of vehicle tax from 1 April 2026','https://www.gov.uk/government/publications/rates-of-vehicle-tax-v149'],['GOV.UK – Vehicle tax for electric and low emission vehicles','https://www.gov.uk/guidance/vehicle-tax-for-electric-and-low-emissions-vehicles'],['GOV.UK – Check vehicle tax rates','https://www.gov.uk/vehicle-tax-rate-tables']],
   faq:[['Do electric cars pay road tax in 2026?','Yes. Since April 2025 EVs pay £10 in the first year then the £200 standard rate, plus £440 if the list price was over £50,000.'],['Is this for older cars?','No – cars registered before 1 April 2017 are taxed on CO2 bands. Use the GOV.UK vehicle tax checker for those.']]},
+{ slug:'take-home-pay-calculator', ico:'💷', short:'Take-Home Pay', title:'Take-Home Pay Calculator UK 2026/27 – Income Tax, NI & Pension',
+  h1:'Take-Home Pay Calculator (Income Tax & National Insurance)',
+  desc:'Free UK salary calculator for 2026/27. See your take-home pay after income tax (England, Wales, NI or Scotland), National Insurance, pension and student loan – yearly, monthly and weekly.',
+  intro:'Enter your yearly salary to see what lands in your bank account after tax, National Insurance, pension and student loan.',
+  form: seg('region','Where do you pay income tax?',[['ruk','England, Wales or NI'],['sco','Scotland']],'ruk') + money('salary','Yearly salary before tax',35000) +
+    seg('pensionType','Workplace pension',[['none','None'],['net','Net pay / relief at source (approx.)'],['sacrifice','Salary sacrifice']],'none') + num('pension','Pension contribution','5','% of salary','0.5') +
+    `<fieldset><legend>Student loan</legend>${chk('plan1','Plan 1')}${chk('plan2','Plan 2')}${chk('plan4','Plan 4 (Scotland)')}${chk('plan5','Plan 5')}${chk('pg','Postgraduate Loan')}</fieldset>`,
+  js:`var plans=['plan1','plan2','plan4','plan5'].filter(function(k){return val(k)});
+  var r=UKCalc.takeHome({salary:+val('salary'),region:radio('region'),pension:+val('pension'),pensionType:radio('pensionType'),plans:plans,pg:val('pg')});
+  out.innerHTML='<p class="hint">Take-home pay per year</p><p class="big">'+fmt(r.net)+'</p><dl class="kv"><dt>Per month</dt><dd>'+fmt(r.monthly)+'</dd><dt>Per week</dt><dd>'+fmt(r.weekly)+'</dd><dt>Income tax</dt><dd>'+fmt(r.incomeTax)+'</dd><dt>National Insurance</dt><dd>'+fmt(r.ni)+'</dd>'
+  +(r.pension?'<dt>Pension</dt><dd>'+fmt(r.pension)+'</dd>':'')+(r.studentLoan?'<dt>Student loan</dt><dd>'+fmt(r.studentLoan)+'</dd>':'')
+  +'<dt>Personal Allowance</dt><dd>'+fmt(r.personalAllowance)+'</dd><dt>Marginal rate (tax + NI)</dt><dd>'+r.marginal+'%</dd></dl>'
+  +'<table><caption class="sr">Income tax by band</caption><thead><tr><th scope="col">Taxable income</th><th scope="col">Rate</th><th scope="col">Tax</th></tr></thead><tbody>'+r.rows.map(function(x){return '<tr><td>'+fmt(x.from)+' – '+fmt(x.to)+'</td><td>'+Math.round(x.rate*100)+'%</td><td>'+fmt(x.tax)+'</td></tr>'}).join('')+'</tbody></table>';`,
+  prose:`<h2>Income tax rates ${YEAR}</h2><p><strong>England, Wales and Northern Ireland:</strong> Personal Allowance £12,570 at 0%, basic rate 20% on £12,571 to £50,270, higher rate 40% on £50,271 to £125,140, additional rate 45% above £125,140.</p>
+  <p><strong>Scotland:</strong> starter 19% (£12,571–£16,537), basic 20% (to £29,526), intermediate 21% (to £43,662), higher 42% (to £75,000), advanced 45% (to £125,140) and top 48% above.</p>
+  <p>Your Personal Allowance falls by £1 for every £2 of adjusted net income over £100,000, so it is zero at £125,140. Between those figures the effective income tax rate is 60%.</p>
+  <h2>National Insurance ${YEAR}</h2><p>Employees pay Class 1 NI at <strong>8%</strong> on earnings between £12,570 and £50,270 a year (£242 to £967 a week) and <strong>2%</strong> above that.</p>
+  <h2>Worked example</h2><p>£30,000 salary in England: tax = 20% × (£30,000 − £12,570) = <strong>£3,486</strong>; NI = 8% × £17,430 = <strong>£1,394.40</strong>; take-home = <strong>£25,119.60</strong> a year (£2,093.30 a month).</p>`,
+  sources:[['GOV.UK – Income Tax rates and Personal Allowances','https://www.gov.uk/income-tax-rates'],['GOV.UK – Scottish Income Tax 2026 to 2027','https://www.gov.uk/scottish-income-tax'],['GOV.UK – Rates and allowances: National Insurance contributions','https://www.gov.uk/government/publications/rates-and-allowances-national-insurance-contributions/rates-and-allowances-national-insurance-contributions'],['GOV.UK – Repaying your student loan','https://www.gov.uk/repaying-your-student-loan/what-you-pay']],
+  faq:[['What is the tax-free Personal Allowance for 2026/27?','£12,570, frozen until April 2031. It is reduced by £1 for every £2 of income over £100,000.'],['Why is my payslip slightly different?','Payroll works out tax and NI per pay period using your tax code, so monthly figures can differ by a few pounds. Bonuses, benefits in kind and a non-standard tax code also change the result.'],['Does salary sacrifice save National Insurance?','Yes. Salary sacrifice reduces your pay before both tax and NI. Net pay arrangements save tax but not NI.']]},
+
+{ slug:'minimum-wage-calculator', ico:'⏱️', short:'Minimum Wage', title:'Minimum Wage Calculator UK April 2026 – Am I Paid Enough?',
+  h1:'Minimum Wage Checker (National Living Wage 2026)',
+  desc:'Check your hourly pay against the UK National Living Wage (£12.71) and National Minimum Wage rates from 1 April 2026 for your age and apprenticeship, and see any shortfall.',
+  intro:'Enter your age, hourly pay and hours to check you are getting at least the legal minimum.',
+  form: num('age','Your age','22','years','1') + chk('apprentice','I am an apprentice') + chk('firstYear','I am in the first year of my apprenticeship') +
+    money('hourly','Your hourly pay','12.50','before tax') + num('hours','Hours per week','37.5','','0.5') + seg('year','Rates',[['2026','From 1 April 2026'],['2025','April 2025 – March 2026']],'2026'),
+  js:`var r=UKCalc.minWage({age:+val('age'),apprentice:val('apprentice'),firstYear:val('firstYear'),hourly:+val('hourly'),hours:+val('hours'),year:radio('year')});
+  out.innerHTML='<p class="hint">'+r.band+' from '+r.from+'</p><p class="big">'+fmt(r.rate)+' an hour</p>'
+  +(r.ok===undefined?'':(r.ok?'<p><strong>✅ Your pay meets the legal minimum.</strong></p>':'<p><strong>⚠️ You may be underpaid by '+fmt(r.shortPerHour)+' an hour ('+fmt(r.shortPerWeek)+' a week, about '+fmt(r.shortPerYear)+' a year).</strong></p>'))
+  +'<dl class="kv"><dt>Minimum per week</dt><dd>'+fmt(r.weeklyMin)+'</dd><dt>Minimum per month (approx.)</dt><dd>'+fmt(r.monthlyMin)+'</dd><dt>Minimum per year</dt><dd>'+fmt(r.yearlyMin)+'</dd></dl>'
+  +'<ul class="notes"><li>Check deductions for uniforms, tools or accommodation too – they can take pay below the minimum. Talk to Acas (0300 123 1100) if you think you are underpaid.</li></ul>';`,
+  prose:`<h2>Minimum wage rates from 1 April 2026</h2><table><thead><tr><th scope="col">Age / type</th><th scope="col">April 2026</th><th scope="col">April 2025</th></tr></thead><tbody>
+  <tr><td>21 and over (National Living Wage)</td><td>£12.71</td><td>£12.21</td></tr><tr><td>18 to 20</td><td>£10.85</td><td>£10.00</td></tr><tr><td>Under 18</td><td>£8.00</td><td>£7.55</td></tr><tr><td>Apprentice</td><td>£8.00</td><td>£7.55</td></tr></tbody></table>
+  <h2>Who gets the apprentice rate?</h2><p>Apprentices under 19, or aged 19 and over in the first year of their apprenticeship, can be paid the apprentice rate. After the first year, apprentices aged 19 or over must get the minimum wage for their age.</p>
+  <h2>Worked example</h2><p>A 25-year-old working 37.5 hours a week must earn at least 37.5 × £12.71 = <strong>£476.63</strong> a week, or <strong>£24,784.50</strong> a year.</p>`,
+  sources:[['GOV.UK – National Minimum Wage and National Living Wage rates','https://www.gov.uk/national-minimum-wage-rates'],['GOV.UK – Who gets the minimum wage','https://www.gov.uk/national-minimum-wage/who-gets-the-minimum-wage'],['Acas – National Minimum Wage and National Living Wage','https://www.acas.org.uk/national-minimum-wage-entitlement']],
+  faq:[['What is the National Living Wage in 2026?','£12.71 an hour for workers aged 21 and over, from 1 April 2026 (up from £12.21).'],['What is the minimum wage for an 18 year old in 2026?','£10.85 an hour for 18 to 20 year olds, or £8.00 if they are an apprentice.'],['What can I do if I am underpaid?','Speak to your employer first, then contact Acas or complain to HMRC. Employers must pay back arrears at current rates.']]}
+
 ];
 
 const nav = cur => `<nav class="nav" aria-label="Main"><a href="/">🇬🇧 UK Calculators</a><div class="links">${tools.map(t=>`<a href="/${t.slug}/"${t.slug===cur?' aria-current="page"':''}>${t.short}</a>`).join('')}</div></nav>`;
@@ -114,7 +153,7 @@ ${foot}<script src="/assets/calc.js"></script><script src="/assets/ui.js"></scri
 }
 
 function home() {
-  const t = { title:'Free UK Calculators 2026/27 – Stamp Duty, Student Loan, VAT, Mortgage & Car Tax', desc:'Five free, fast UK calculators using official 2026/27 GOV.UK rates: stamp duty (SDLT/LBTT/LTT), student loan repayments, VAT, mortgage repayments and car tax.', slug:'' };
+  const t = { title:'Free UK Calculators 2026/27 – Take-Home Pay, Stamp Duty, Student Loan & More', desc:'Seven free, fast UK calculators using official 2026/27 GOV.UK rates: take-home pay, minimum wage, stamp duty, student loan, VAT, mortgage and car tax.', slug:'' };
   const ld = {'@context':'https://schema.org','@type':'WebSite',name:'UK Calculators',url:BASE+'/',inLanguage:'en-GB',author:{'@type':'Person',name:'Mahir Faysal',url:'https://mfaysal.com/'}};
   return head(t,BASE+'/',ld)+`<body><header class="top"><div class="wrap">${nav('')}<div class="hero"><h1>Free UK Calculators</h1><p>Quick, private and free – everything runs in your browser. Built on official ${YEAR} rates from GOV.UK.</p></div></div></header>
 <main class="wrap"><div class="tools">${tools.map(x=>`<a href="/${x.slug}/"><div class="card"><div class="ico" aria-hidden="true">${x.ico}</div><h2>${x.h1}</h2><p>${x.desc}</p></div></a>`).join('')}</div>
@@ -127,7 +166,7 @@ if (fs.existsSync(path.join(__dirname,'og'))) fs.cpSync(path.join(__dirname,'og'
 fs.writeFileSync(out+'/index.html', home());
 for (const t of tools) { fs.mkdirSync(out+'/'+t.slug,{recursive:true}); fs.writeFileSync(out+'/'+t.slug+'/index.html', page(t)); }
 fs.writeFileSync(out+'/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
-fs.writeFileSync(out+'/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...tools.map(t=>t.slug+'/')].map(s=>`<url><loc>${BASE}/${s}</loc><lastmod>2026-10-12</lastmod></url>`).join('')}</urlset>\n`);
+fs.writeFileSync(out+'/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...tools.map(t=>t.slug+'/')].map(s=>`<url><loc>${BASE}/${s}</loc><lastmod>2026-10-13</lastmod></url>`).join('')}</urlset>\n`);
 fs.writeFileSync(out+'/404.html', home().replace('<h1>Free UK Calculators</h1>','<h1>Page not found</h1>'));
 fs.writeFileSync(path.join(__dirname,'tools.json'), JSON.stringify(tools.map(t=>({slug:t.slug,title:t.title,h1:t.h1,desc:t.desc,ico:t.ico})),null,1));
 console.log('built', tools.length, 'tools ->', BASE);
