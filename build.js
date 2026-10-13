@@ -165,7 +165,9 @@ for (const f of ['style.css','calc.js','ui.js']) fs.copyFileSync(path.join(__dir
 if (fs.existsSync(path.join(__dirname,'og'))) fs.cpSync(path.join(__dirname,'og'), path.join(out,'og'), {recursive:true});
 fs.writeFileSync(out+'/index.html', home());
 for (const t of tools) { fs.mkdirSync(out+'/'+t.slug,{recursive:true}); fs.writeFileSync(out+'/'+t.slug+'/index.html', page(t)); }
+const INDEXNOW_KEY = '0858f933d88844ea9bdfc0115659d50e';
 fs.writeFileSync(out+'/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
+fs.writeFileSync(out+'/'+INDEXNOW_KEY+'.txt', INDEXNOW_KEY+'\n');
 fs.writeFileSync(out+'/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...tools.map(t=>t.slug+'/')].map(s=>`<url><loc>${BASE}/${s}</loc><lastmod>2026-10-13</lastmod></url>`).join('')}</urlset>\n`);
 fs.writeFileSync(out+'/404.html', home().replace('<h1>Free UK Calculators</h1>','<h1>Page not found</h1>'));
 fs.writeFileSync(path.join(__dirname,'tools.json'), JSON.stringify(tools.map(t=>({slug:t.slug,title:t.title,h1:t.h1,desc:t.desc,ico:t.ico})),null,1));
