@@ -126,7 +126,46 @@ const tools = [
   <h2>Who gets the apprentice rate?</h2><p>Apprentices under 19, or aged 19 and over in the first year of their apprenticeship, can be paid the apprentice rate. After the first year, apprentices aged 19 or over must get the minimum wage for their age.</p>
   <h2>Worked example</h2><p>A 25-year-old working 37.5 hours a week must earn at least 37.5 × £12.71 = <strong>£476.63</strong> a week, or <strong>£24,784.50</strong> a year.</p>`,
   sources:[['GOV.UK – National Minimum Wage and National Living Wage rates','https://www.gov.uk/national-minimum-wage-rates'],['GOV.UK – Who gets the minimum wage','https://www.gov.uk/national-minimum-wage/who-gets-the-minimum-wage'],['Acas – National Minimum Wage and National Living Wage','https://www.acas.org.uk/national-minimum-wage-entitlement']],
-  faq:[['What is the National Living Wage in 2026?','£12.71 an hour for workers aged 21 and over, from 1 April 2026 (up from £12.21).'],['What is the minimum wage for an 18 year old in 2026?','£10.85 an hour for 18 to 20 year olds, or £8.00 if they are an apprentice.'],['What can I do if I am underpaid?','Speak to your employer first, then contact Acas or complain to HMRC. Employers must pay back arrears at current rates.']]}
+  faq:[['What is the National Living Wage in 2026?','£12.71 an hour for workers aged 21 and over, from 1 April 2026 (up from £12.21).'],['What is the minimum wage for an 18 year old in 2026?','£10.85 an hour for 18 to 20 year olds, or £8.00 if they are an apprentice.'],['What can I do if I am underpaid?','Speak to your employer first, then contact Acas or complain to HMRC. Employers must pay back arrears at current rates.']]},
+
+
+{ slug:'self-employed-tax-calculator', ico:'🧑‍💻', short:'Self-Employed Tax', title:'Self-Employed Tax Calculator UK 2026/27 – Income Tax & Class 4 NI',
+  h1:'Self-Employed Tax & National Insurance Calculator',
+  desc:'Free UK sole trader tax calculator for 2026/27. Enter your profit to see Income Tax, Class 4 NI (6% and 2%), Class 2, student loan, payments on account and how much to set aside.',
+  intro:'Enter your yearly profit (income minus allowable expenses) to see your Self Assessment bill and what to save each month.',
+  form: seg('region','Where do you pay income tax?',[['ruk','England, Wales or NI'],['sco','Scotland']],'ruk') + money('profit','Yearly profit','30000','after allowable expenses') +
+    chk('voluntaryClass2','Pay voluntary Class 2 NI if profit is under £7,105') +
+    `<fieldset><legend>Student loan</legend>${chk('plan1','Plan 1')}${chk('plan2','Plan 2')}${chk('plan4','Plan 4 (Scotland)')}${chk('plan5','Plan 5')}${chk('pg','Postgraduate Loan')}</fieldset>`,
+  js:`var plans=['plan1','plan2','plan4','plan5'].filter(function(k){return val(k)});
+  var r=UKCalc.selfEmployed({profit:+val('profit'),region:radio('region'),voluntaryClass2:val('voluntaryClass2'),plans:plans,pg:val('pg')});
+  out.innerHTML='<p class="hint">Estimated tax bill for 2026/27</p><p class="big">'+fmt(r.totalBill)+'</p><dl class="kv"><dt>Income tax</dt><dd>'+fmt(r.incomeTax)+'</dd><dt>Class 4 NI</dt><dd>'+fmt(r.class4)+'</dd>'
+  +'<dt>Class 2 NI</dt><dd>'+(r.class2?fmt(r.class2)+' (voluntary)':(r.class2Credited?'£0 – treated as paid':'£0'))+'</dd>'+(r.studentLoan?'<dt>Student loan</dt><dd>'+fmt(r.studentLoan)+'</dd>':'')
+  +'<dt>Profit after tax</dt><dd>'+fmt(r.net)+' ('+fmt(r.monthly)+'/month)</dd><dt>Effective rate</dt><dd>'+r.effectiveRate+'%</dd><dt>Set aside</dt><dd>about '+r.setAsidePct+'% of profit</dd>'
+  +(r.paymentOnAccount?'<dt>Each payment on account</dt><dd>'+fmt(r.paymentOnAccount)+' (31 Jan &amp; 31 Jul)</dd>':'')+'</dl>'
+  +'<table><caption class="sr">Income tax by band</caption><thead><tr><th scope="col">Taxable profit</th><th scope="col">Rate</th><th scope="col">Tax</th></tr></thead><tbody>'+r.rows.map(function(x){return '<tr><td>'+fmt(x.from)+' – '+fmt(x.to)+'</td><td>'+Math.round(x.rate*100)+'%</td><td>'+fmt(x.tax)+'</td></tr>'}).join('')+'</tbody></table>';`,
+  prose:`<h2>Self-employed National Insurance ${YEAR}</h2><p><strong>Class 4:</strong> 6% on profits between £12,570 and £50,270, and 2% on profits above £50,270. <strong>Class 2:</strong> if your profits are £7,105 or more, Class 2 is treated as paid to protect your National Insurance record, so you pay nothing. Below £7,105 you can choose to pay voluntary Class 2 at £3.65 a week.</p>
+  <h2>Income tax ${YEAR}</h2><p>Sole traders pay the same Income Tax as employees: Personal Allowance £12,570, then 20% to £50,270, 40% to £125,140 and 45% above (Scotland has six bands, from 19% to 48%). The allowance falls by £1 for every £2 of income over £100,000.</p>
+  <h2>Payments on account</h2><p>If your last Self Assessment bill was £1,000 or more, HMRC usually asks for two advance payments on account (31 January and 31 July), each half of the previous year's bill. This does not apply if more than 80% of your tax was already paid at source. The calculator shows what each payment would be if this year's bill repeats.</p>
+  <h2>Worked example</h2><p>£30,000 profit in England: Income Tax = 20% × £17,430 = <strong>£3,486</strong>; Class 4 = 6% × £17,430 = <strong>£1,045.80</strong>; total <strong>£4,531.80</strong> (about 15% of profit). Each payment on account would be £2,265.90.</p>
+  <p>This tool assumes self-employment is your only income. If you also have a job, use the <a href="/take-home-pay-calculator/">take-home pay calculator</a> as well, and remember your Personal Allowance is shared.</p>`,
+  sources:[['GOV.UK – Self-employed National Insurance rates','https://www.gov.uk/self-employed-national-insurance-rates'],['GOV.UK – Income Tax rates and Personal Allowances','https://www.gov.uk/income-tax-rates'],['GOV.UK – Scottish Income Tax','https://www.gov.uk/scottish-income-tax'],['GOV.UK – Payments on account','https://www.gov.uk/understand-self-assessment-bill/payments-on-account'],['GOV.UK – Self Assessment deadlines','https://www.gov.uk/self-assessment-tax-returns/deadlines']],
+  faq:[['How much tax do I pay on £30,000 self-employed profit?','In England, Wales or NI for 2026/27: £3,486 Income Tax plus £1,045.80 Class 4 NI, so £4,531.80 in total.'],['Do I still pay Class 2 National Insurance?','Not if your profits are £7,105 or more. It is treated as paid. Below that, you can pay voluntary Class 2 at £3.65 a week to protect your State Pension record.'],['How much should I put aside for tax as a sole trader?','Use the "set aside" figure above. Many basic-rate sole traders need roughly 15% to 25% of profit, and more if they repay a student loan or earn over £50,270.'],['When is the Self Assessment deadline?','For the 2025/26 tax year, online returns and payment are due by 31 January 2027. The second payment on account is due 31 July.']]},
+
+{ slug:'dividend-tax-calculator', ico:'📈', short:'Dividend Tax', title:'Dividend Tax Calculator UK 2026/27 – 10.75%, 35.75% & 39.35%',
+  h1:'Dividend Tax Calculator',
+  desc:'Free UK dividend tax calculator for 2026/27. Uses the £500 dividend allowance and the new 10.75%, 35.75% and 39.35% rates with your salary to show exactly what you owe.',
+  intro:'Enter your salary (or other income) and your dividends to see how much dividend tax you pay for 2026/27.',
+  form: seg('region','Where do you pay income tax?',[['ruk','England, Wales or NI'],['sco','Scotland']],'ruk') + money('salary','Salary and other non-dividend income','12570','yearly, before tax') + money('dividends','Dividends received','20000','yearly, outside ISAs'),
+  js:`var r=UKCalc.dividendTax({salary:+val('salary'),dividends:+val('dividends'),region:radio('region')});
+  out.innerHTML='<p class="hint">Dividend tax for 2026/27</p><p class="big">'+fmt(r.dividendTax)+'</p><dl class="kv"><dt>Dividend allowance used</dt><dd>'+fmt(r.allowanceUsed)+'</dd><dt>Personal Allowance used on dividends</dt><dd>'+fmt(r.paUsedOnDividends)+'</dd><dt>Taxable dividends</dt><dd>'+fmt(r.dividendTaxable)+'</dd><dt>Effective rate on dividends</dt><dd>'+r.effectiveDivRate+'%</dd><dt>Income tax on salary</dt><dd>'+fmt(r.salaryTax)+'</dd><dt>Total income tax</dt><dd>'+fmt(r.totalTax)+'</dd></dl>'
+  +'<table><caption class="sr">Dividend tax by band</caption><thead><tr><th scope="col">Taxable income slice</th><th scope="col">Rate</th><th scope="col">Tax</th></tr></thead><tbody>'+r.rows.map(function(x){return '<tr><td>'+fmt(x.from)+' – '+fmt(x.to)+'</td><td>'+(x.rate*100).toFixed(2)+'%</td><td>'+fmt(x.tax)+'</td></tr>'}).join('')+'</tbody></table>'
+  +'<p class="hint">National Insurance is not charged on dividends. Salary NI is not included.</p>';`,
+  prose:`<h2>Dividend tax rates ${YEAR}</h2><p>From 6 April 2026 the rates on dividends above the £500 allowance are <strong>10.75%</strong> (basic rate), <strong>35.75%</strong> (higher rate) and <strong>39.35%</strong> (additional rate). Dividends inside an ISA are tax-free.</p>
+  <h2>How it is worked out</h2><p>Your dividends are added on top of your other income. Any unused Personal Allowance (£12,570) covers dividends first. The next £500 is the dividend allowance, taxed at 0%, but it still uses up part of your tax band. Dividends falling in the basic band (taxable income up to £37,700) pay 10.75%, the higher band (up to £125,140) pays 35.75%, and above that 39.35%.</p>
+  <p><strong>Scotland:</strong> Scottish rates apply to salary only. Dividends are taxed at the UK dividend rates and bands, so this calculator uses UK bands for the dividend part.</p>
+  <h2>Worked example (GOV.UK)</h2><p>£29,570 wages and £3,000 dividends: taxable income £20,000, all in the basic band. No tax on £500 (dividend allowance), and 10.75% on £2,500 = <strong>£268.75</strong>.</p>`,
+  sources:[['GOV.UK – Tax on dividends','https://www.gov.uk/tax-on-dividends'],['GOV.UK – Income Tax rates and Personal Allowances','https://www.gov.uk/income-tax-rates']],
+  faq:[['What is the dividend allowance for 2026/27?','£500. Dividends above that are taxed at 10.75%, 35.75% or 39.35% depending on your band.'],['Did dividend tax go up in April 2026?','Yes. From 6 April 2026 the basic rate is 10.75% and the higher rate 35.75%. The additional rate is 39.35%.'],['Do I pay National Insurance on dividends?','No. National Insurance is not charged on dividends, which is one reason company directors often take a mix of salary and dividends.'],['Do I need to tell HMRC about dividends?','Yes, if your dividends are more than both your unused Personal Allowance and the £500 dividend allowance. How you report them depends on how much you received; see GOV.UK.']]},
 
 ];
 
@@ -153,7 +192,7 @@ ${foot}<script src="/assets/calc.js"></script><script src="/assets/ui.js"></scri
 }
 
 function home() {
-  const t = { title:'Free UK Calculators 2026/27 – Take-Home Pay, Stamp Duty, Student Loan & More', desc:'Seven free, fast UK calculators using official 2026/27 GOV.UK rates: take-home pay, minimum wage, stamp duty, student loan, VAT, mortgage and car tax.', slug:'' };
+  const t = { title:'Free UK Calculators 2026/27 – Take-Home Pay, Stamp Duty, Student Loan & More', desc:'Nine free, fast UK calculators using official 2026/27 GOV.UK rates: take-home pay, self-employed tax, dividend tax, minimum wage, stamp duty, student loan, VAT, mortgage and car tax.', slug:'' };
   const ld = {'@context':'https://schema.org','@type':'WebSite',name:'UK Calculators',url:BASE+'/',inLanguage:'en-GB',author:{'@type':'Person',name:'Mahir Faysal',url:'https://mfaysal.com/'}};
   return head(t,BASE+'/',ld)+`<body><header class="top"><div class="wrap">${nav('')}<div class="hero"><h1>Free UK Calculators</h1><p>Quick, private and free – everything runs in your browser. Built on official ${YEAR} rates from GOV.UK.</p></div></div></header>
 <main class="wrap"><div class="tools">${tools.map(x=>`<a href="/${x.slug}/"><div class="card"><div class="ico" aria-hidden="true">${x.ico}</div><h2>${x.h1}</h2><p>${x.desc}</p></div></a>`).join('')}</div>
@@ -168,7 +207,7 @@ for (const t of tools) { fs.mkdirSync(out+'/'+t.slug,{recursive:true}); fs.write
 const INDEXNOW_KEY = '0858f933d88844ea9bdfc0115659d50e';
 fs.writeFileSync(out+'/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
 fs.writeFileSync(out+'/'+INDEXNOW_KEY+'.txt', INDEXNOW_KEY+'\n');
-fs.writeFileSync(out+'/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...tools.map(t=>t.slug+'/')].map(s=>`<url><loc>${BASE}/${s}</loc><lastmod>2026-10-13</lastmod></url>`).join('')}</urlset>\n`);
+fs.writeFileSync(out+'/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...tools.map(t=>t.slug+'/')].map(s=>`<url><loc>${BASE}/${s}</loc><lastmod>2026-10-14</lastmod></url>`).join('')}</urlset>\n`);
 fs.writeFileSync(out+'/404.html', home().replace('<h1>Free UK Calculators</h1>','<h1>Page not found</h1>'));
 fs.writeFileSync(path.join(__dirname,'tools.json'), JSON.stringify(tools.map(t=>({slug:t.slug,title:t.title,h1:t.h1,desc:t.desc,ico:t.ico})),null,1));
 console.log('built', tools.length, 'tools ->', BASE);

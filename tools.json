@@ -47,5 +47,19 @@
   "h1": "Minimum Wage Checker (National Living Wage 2026)",
   "desc": "Check your hourly pay against the UK National Living Wage (£12.71) and National Minimum Wage rates from 1 April 2026 for your age and apprenticeship, and see any shortfall.",
   "ico": "⏱️"
+ },
+ {
+  "slug": "self-employed-tax-calculator",
+  "title": "Self-Employed Tax Calculator UK 2026/27 – Income Tax & Class 4 NI",
+  "h1": "Self-Employed Tax & National Insurance Calculator",
+  "desc": "Free UK sole trader tax calculator for 2026/27. Enter your profit to see Income Tax, Class 4 NI (6% and 2%), Class 2, student loan, payments on account and how much to set aside.",
+  "ico": "🧑‍💻"
+ },
+ {
+  "slug": "dividend-tax-calculator",
+  "title": "Dividend Tax Calculator UK 2026/27 – 10.75%, 35.75% & 39.35%",
+  "h1": "Dividend Tax Calculator",
+  "desc": "Free UK dividend tax calculator for 2026/27. Uses the £500 dividend allowance and the new 10.75%, 35.75% and 39.35% rates with your salary to show exactly what you owe.",
+  "ico": "📈"
  }
 ]

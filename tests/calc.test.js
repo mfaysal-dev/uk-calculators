@@ -49,3 +49,21 @@ test('Apprentice 18 (under 19) = £8 any year', () => assert.equal(C.minWage({ a
 test('£12.00/hr at 25, 37.5 h: short £0.71/h, £26.63/wk', () => { const r = C.minWage({ age: 25, hourly: 12, hours: 37.5 }); assert.equal(r.ok, false); assert.equal(r.shortPerWeek, 26.63); });
 test('2025/26 NLW was £12.21', () => assert.equal(C.minWage({ age: 30, year: '2025' }).rate, 12.21));
 test('Full-time NLW yearly 37.5h = £24,784.50', () => assert.equal(C.minWage({ age: 30, hours: 37.5 }).yearlyMin, 24784.5));
+// Self-employed 2026/27 (GOV.UK: Class 4 6% £12,570–£50,270, 2% above; Class 2 credited from £7,105)
+test('SE £30,000: tax £3,486, Class 4 £1,045.80', () => { const r = C.selfEmployed({ profit: 30000 }); assert.equal(r.incomeTax, 3486); assert.equal(r.class4, 1045.8); assert.equal(r.totalBill, 4531.8); assert.equal(r.class2Credited, true); });
+test('SE £60,000: Class 4 = 6%×37,700 + 2%×9,730 = £2,456.60', () => assert.equal(C.selfEmployed({ profit: 60000 }).class4, 2456.6));
+test('SE £10,000: no tax, no Class 4', () => { const r = C.selfEmployed({ profit: 10000 }); assert.equal(r.totalBill, 0); });
+test('SE £5,000 voluntary Class 2 = £189.80', () => assert.equal(C.selfEmployed({ profit: 5000, voluntaryClass2: true }).class2, 189.8));
+test('SE voluntary Class 2 ignored above £7,105', () => assert.equal(C.selfEmployed({ profit: 8000, voluntaryClass2: true }).class2, 0));
+test('SE £30,000 payment on account = £2,265.90', () => assert.equal(C.selfEmployed({ profit: 30000 }).paymentOnAccount, 2265.9));
+test('SE under £1,000 bill: no payment on account', () => assert.equal(C.selfEmployed({ profit: 15000 }).paymentOnAccount, 0));
+test('SE Scotland £30,000 tax = £3,451.07', () => assert.equal(C.selfEmployed({ profit: 30000, region: 'sco' }).incomeTax, 3451.07));
+// Dividends 2026/27 (GOV.UK: £500 allowance; 10.75% / 35.75% / 39.35%)
+test('GOV.UK example: £29,570 wages + £3,000 dividends = £268.75', () => assert.equal(C.dividendTax({ salary: 29570, dividends: 3000 }).dividendTax, 268.75));
+test('£12,570 salary + £10,000 dividends = 10.75%×9,500 = £1,021.25', () => assert.equal(C.dividendTax({ salary: 12570, dividends: 10000 }).dividendTax, 1021.25));
+test('Dividends under allowance = £0', () => assert.equal(C.dividendTax({ salary: 40000, dividends: 500 }).dividendTax, 0));
+test('Unused PA covers dividends: £0 salary + £13,070 dividends = £0', () => assert.equal(C.dividendTax({ salary: 0, dividends: 13070 }).dividendTax, 0));
+test('Higher rate: £60,000 salary + £5,000 div = 35.75%×4,500 = £1,608.75', () => assert.equal(C.dividendTax({ salary: 60000, dividends: 5000 }).dividendTax, 1608.75));
+test('Straddle: £45,000 + £10,000 div', () => { const r = C.dividendTax({ salary: 45000, dividends: 10000 }); /* taxable sal 32,430; allowance to 32,930; basic to 37,700: 4,770@10.75=512.775; 4,730@35.75=1690.975 */ assert.equal(r.dividendTax, 2203.75); });
+test('Additional rate above £125,140', () => { const r = C.dividendTax({ salary: 150000, dividends: 10000 }); assert.equal(r.personalAllowance, 0); assert.equal(r.dividendTax, r2(9500 * 0.3935)); });
+function r2(n){return Math.round((n+Number.EPSILON)*100)/100}

@@ -51,6 +51,10 @@
     // Employee Class 1 NI 2026/27 (annual equivalents of PT £242/wk and UEL £967/wk as used by HMRC: £12,570 / £50,270)
     ni: { pt: 12570, uel: 50270, main: .08, upper: .02 },
     // National Minimum Wage / National Living Wage hourly rates
+    // Self-employed NI 2026/27 (GOV.UK self-employed-national-insurance-rates)
+    class4: { lpl: 12570, upl: 50270, main: .06, upper: .02 }, class2: { spt: 7105, weekly: 3.65 },
+    // Dividends 2026/27 (GOV.UK tax-on-dividends): allowance £500; bands on taxable income use UK (non-Scottish) bands
+    dividend: { allowance: 500, basic: .1075, higher: .3575, additional: .3935 },
     nmw: { '2026': { from: '1 April 2026', a21: 12.71, a18: 10.85, u18: 8.00, app: 8.00 },
            '2025': { from: '1 April 2025', a21: 12.21, a18: 10.00, u18: 7.55, app: 7.55 } }
   };
@@ -170,6 +174,48 @@
     return res;
   }
 
-  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax, takeHome: takeHome, minWage: minWage };
+  // Tax on a slice of income stacked from `start` (taxable income) using [[upper, rate],...]
+  function stacked(start, amount, bands) {
+    var tax = 0, rows = [], lower = 0, end = start + amount;
+    for (var i = 0; i < bands.length; i++) {
+      var up = bands[i][0], a = Math.max(start, lower), b = Math.min(end, up);
+      if (b > a) { tax += (b - a) * bands[i][1]; rows.push({ from: a, to: b, rate: bands[i][1], tax: r2((b - a) * bands[i][1]) }); }
+      lower = up;
+    }
+    return { tax: r2(tax), rows: rows };
+  }
+  function paFor(income) { var T = RATES.incomeTax; return Math.max(0, T.pa - Math.floor(Math.max(0, income - T.taperFrom) / 2)); }
+
+  // Self-employed (sole trader). o: profit, region, plans[], pg, voluntaryClass2
+  function selfEmployed(o) {
+    var T = RATES.incomeTax, C4 = RATES.class4, C2 = RATES.class2, profit = Math.max(0, +o.profit || 0);
+    var pa = paFor(profit), taxable = Math.max(0, profit - pa);
+    var it = banded(taxable, o.region === 'sco' ? T.sco : T.ruk);
+    var c4 = r2(Math.max(0, Math.min(profit, C4.upl) - C4.lpl) * C4.main + Math.max(0, profit - C4.upl) * C4.upper);
+    var c2 = profit < C2.spt && o.voluntaryClass2 ? r2(C2.weekly * 52) : 0;
+    var sl = studentLoan({ income: profit, plans: o.plans || [], pg: o.pg, period: 'year' });
+    var bill = r2(it.tax + c4 + c2 + sl.total);
+    var poaBase = r2(it.tax + c4);              // payments on account cover income tax + Class 4
+    var poa = poaBase >= 1000 ? r2(poaBase / 2) : 0;
+    return { profit: r2(profit), personalAllowance: pa, taxable: r2(taxable), incomeTax: it.tax, rows: it.rows, class4: c4, class2: c2,
+      class2Credited: profit >= C2.spt, studentLoan: sl.total, totalBill: bill, net: r2(profit - bill), monthly: r2((profit - bill) / 12),
+      effectiveRate: profit ? r2(bill / profit * 100) : 0, paymentOnAccount: poa, setAsidePct: profit ? Math.ceil(bill / profit * 100) : 0 };
+  }
+
+  // Dividend tax. o: salary (other non-savings income), dividends, region
+  function dividendTax(o) {
+    var T = RATES.incomeTax, D = RATES.dividend, sal = Math.max(0, +o.salary || 0), div = Math.max(0, +o.dividends || 0);
+    var pa = paFor(sal + div);
+    var salTaxable = Math.max(0, sal - pa), paLeft = Math.max(0, pa - sal);
+    var divTaxable = Math.max(0, div - paLeft);
+    var salaryTax = banded(salTaxable, o.region === 'sco' ? T.sco : T.ruk).tax;
+    var allow = Math.min(D.allowance, divTaxable);
+    var bands = [[T.ruk[0][0], D.basic], [T.ruk[1][0], D.higher], [INF, D.additional]];
+    var d = stacked(salTaxable + allow, divTaxable - allow, bands);
+    return { personalAllowance: pa, paUsedOnDividends: r2(Math.min(paLeft, div)), allowanceUsed: r2(allow), dividendTaxable: r2(divTaxable - allow),
+      dividendTax: d.tax, rows: d.rows, salaryTax: salaryTax, totalTax: r2(salaryTax + d.tax), effectiveDivRate: div ? r2(d.tax / div * 100) : 0 };
+  }
+
+  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax, takeHome: takeHome, minWage: minWage, selfEmployed: selfEmployed, dividendTax: dividendTax, stacked: stacked };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.UKCalc = api;
 })(this);
