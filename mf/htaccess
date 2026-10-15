@@ -1,6 +1,22 @@
 # mf-free-tools static v1: /free-tools/ is served as plain files (the PHP router is never reached for real files/dirs).
 # Header "set" (not "always") on purpose: it replaces the parent public/.htaccess values in the same table instead of adding duplicates.
 DirectoryIndex index.html
+# --- mf-free-tools slash fix v1 (begin) ---
+# The docroot is the repo root and /.htaccess rewrites into public/, so mod_dir's automatic slash redirect leaked /public/ into URLs.
+DirectorySlash Off
+# The bare folder itself (/free-tools or /public/free-tools) is not seen by mod_rewrite here, so use mod_alias
+RedirectMatch 301 ^/(?:public/)?free-tools$ /free-tools/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # /public/free-tools/<dir> (no slash) -> /free-tools/<dir>/   (THE_REQUEST = what the browser asked for)
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{THE_REQUEST} ^\S+\s/(?:public/)?free-tools(/[^?\s]*[^/?\s])[?\s]
+    RewriteRule ^ /free-tools%1/ [R=301,L,NE]
+    # /public/free-tools/... -> /free-tools/...
+    RewriteCond %{THE_REQUEST} ^\S+\s/public/free-tools(/[^?\s]*)?[?\s]
+    RewriteRule ^ /free-tools%1 [R=301,L,NE]
+</IfModule>
+# --- mf-free-tools slash fix v1 (end) ---
 Options -Indexes
 ErrorDocument 404 /free-tools/404.html
 AddType application/wasm .wasm
