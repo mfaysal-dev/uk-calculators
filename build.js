@@ -375,6 +375,7 @@ const tools = [
 
 ];
 tools.push(...require('./catalog/index.js')({seg,num,chk,money}));
+{ const M={'Date & time':'Maths & everyday',Health:'Maths & everyday',Calculators:'Maths & everyday',Security:'Developer & encoders',SEO:'Text'}; tools.forEach(t=>{if(M[t.cat])t.cat=M[t.cat]}); }
 const CATS=[...new Set(tools.filter(t=>t.generic).map(t=>t.cat))];
 
 const nav = cur => `<nav class="nav" aria-label="Main"><a href="/">🇬🇧 UK Calculators</a><div class="links">${tools.filter(t=>!t.generic).map(t=>`<a href="/${t.slug}/"${t.slug===cur?' aria-current="page"':''}>${t.short}</a>`).join('')}<a href="/#tools">All free tools ▾</a></div></nav>`;
@@ -422,5 +423,6 @@ fs.writeFileSync(out+'/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${BASE}/s
 fs.writeFileSync(out+'/'+INDEXNOW_KEY+'.txt', INDEXNOW_KEY+'\n');
 fs.writeFileSync(out+'/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...tools.map(t=>t.slug+'/')].map(s=>`<url><loc>${BASE}/${s}</loc><lastmod>2026-10-15</lastmod></url>`).join('')}</urlset>\n`);
 fs.writeFileSync(out+'/404.html', home().replace('<h1>Free UK Calculators</h1>','<h1>Page not found</h1>'));
-fs.writeFileSync(path.join(__dirname,'tools.json'), JSON.stringify(tools.map(t=>({slug:t.slug,title:t.title,h1:t.h1,desc:t.desc,ico:t.ico})),null,1));
+fs.writeFileSync(path.join(__dirname,'tools.json'), JSON.stringify(tools.map(t=>({slug:t.slug,title:t.title,h1:t.h1,desc:t.desc,ico:t.ico,short:t.short,cat:t.generic?(t.cat||'Everyday'):'UK money & work',kw:t.kw||''})),null,1));
+fs.writeFileSync(path.join(__dirname,'public','tools.json'), fs.readFileSync(path.join(__dirname,'tools.json')));
 console.log('built', tools.length, 'tools ->', BASE);

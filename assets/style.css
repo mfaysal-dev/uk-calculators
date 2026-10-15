@@ -43,3 +43,4 @@ canvas,video,img.res{max-width:100%;height:auto;display:block;border-radius:10px
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.ba figure{margin:0}.ba figcaption{font-size:.85rem;color:var(--muted);text-align:center}
 .tools.mini{margin-top:0}
 .ba img{max-width:100%;height:auto;display:block}.ba{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+#out,.grid>*{min-width:0}

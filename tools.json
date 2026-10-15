@@ -4,510 +4,1019 @@
   "title": "Stamp Duty Calculator UK 2026/27 – SDLT, LBTT & LTT",
   "h1": "Stamp Duty Calculator (England, NI, Scotland & Wales)",
   "desc": "Free UK stamp duty calculator for 2026/27. Work out SDLT (England & Northern Ireland), LBTT (Scotland) and LTT (Wales) with first-time buyer relief and second-home surcharges.",
-  "ico": "🏠"
+  "ico": "🏠",
+  "short": "Stamp Duty",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "student-loan-repayment-calculator",
   "title": "Student Loan Repayment Calculator UK 2026/27 – Plan 1, 2, 4, 5 & Postgrad",
   "h1": "Student Loan Repayment Calculator",
   "desc": "Calculate your UK student loan repayments for 2026/27. Supports Plan 1, Plan 2, Plan 4 (Scotland), Plan 5 and Postgraduate Loans – yearly, monthly or weekly.",
-  "ico": "🎓"
+  "ico": "🎓",
+  "short": "Student Loan",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "vat-calculator",
   "title": "VAT Calculator UK – Add or Remove VAT at 20%, 5% or 0%",
   "h1": "VAT Calculator (Add or Remove VAT)",
   "desc": "Free UK VAT calculator. Add VAT to a net price or remove VAT from a gross price at the 20% standard, 5% reduced or 0% zero rate.",
-  "ico": "🧾"
+  "ico": "🧾",
+  "short": "VAT",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "mortgage-calculator",
   "title": "Mortgage Calculator UK – Monthly Repayments & Affordability",
   "h1": "Mortgage Repayment & Affordability Calculator",
   "desc": "Free UK mortgage calculator. Work out monthly repayments for repayment or interest-only mortgages, total interest, a rate-rise stress test and how much you could borrow.",
-  "ico": "🏦"
+  "ico": "🏦",
+  "short": "Mortgage",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "car-tax-calculator",
   "title": "Car Tax Calculator UK 2026/27 – VED by CO2, Fuel & List Price",
   "h1": "Car Tax (VED) Calculator",
   "desc": "Work out UK car tax (Vehicle Excise Duty) from 1 April 2026: first-year rate by CO2, the £200 standard rate, the £440 expensive car supplement and EV tax.",
-  "ico": "🚗"
+  "ico": "🚗",
+  "short": "Car Tax (VED)",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "take-home-pay-calculator",
   "title": "Take-Home Pay Calculator UK 2026/27 – Income Tax, NI & Pension",
   "h1": "Take-Home Pay Calculator (Income Tax & National Insurance)",
   "desc": "Free UK salary calculator for 2026/27. See your take-home pay after income tax (England, Wales, NI or Scotland), National Insurance, pension and student loan – yearly, monthly and weekly.",
-  "ico": "💷"
+  "ico": "💷",
+  "short": "Take-Home Pay",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "minimum-wage-calculator",
   "title": "Minimum Wage Calculator UK April 2026 – Am I Paid Enough?",
   "h1": "Minimum Wage Checker (National Living Wage 2026)",
   "desc": "Check your hourly pay against the UK National Living Wage (£12.71) and National Minimum Wage rates from 1 April 2026 for your age and apprenticeship, and see any shortfall.",
-  "ico": "⏱️"
+  "ico": "⏱️",
+  "short": "Minimum Wage",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "self-employed-tax-calculator",
   "title": "Self-Employed Tax Calculator UK 2026/27 – Income Tax & Class 4 NI",
   "h1": "Self-Employed Tax & National Insurance Calculator",
   "desc": "Free UK sole trader tax calculator for 2026/27. Enter your profit to see Income Tax, Class 4 NI (6% and 2%), Class 2, student loan, payments on account and how much to set aside.",
-  "ico": "🧑‍💻"
+  "ico": "🧑‍💻",
+  "short": "Self-Employed Tax",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "dividend-tax-calculator",
   "title": "Dividend Tax Calculator UK 2026/27 – 10.75%, 35.75% & 39.35%",
   "h1": "Dividend Tax Calculator",
   "desc": "Free UK dividend tax calculator for 2026/27. Uses the £500 dividend allowance and the new 10.75%, 35.75% and 39.35% rates with your salary to show exactly what you owe.",
-  "ico": "📈"
+  "ico": "📈",
+  "short": "Dividend Tax",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "holiday-entitlement-calculator",
   "title": "Holiday Entitlement Calculator UK 2026 – Days, Hours & Part-Time",
   "h1": "Holiday Entitlement Calculator (Statutory Annual Leave)",
   "desc": "Free UK holiday entitlement calculator. Work out statutory annual leave for full-time, part-time, irregular-hours and part-year workers using the GOV.UK 5.6 weeks and 12.07% rules.",
-  "ico": "🏖️"
+  "ico": "🏖️",
+  "short": "Holiday Entitlement",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "redundancy-pay-calculator",
   "title": "Redundancy Pay Calculator UK 2026 – Statutory Redundancy (£751 Cap)",
   "h1": "Statutory Redundancy Pay Calculator",
   "desc": "Free UK statutory redundancy pay calculator for 2026. Uses your age, years of service and weekly pay with the £751 weekly cap (from 6 April 2026) to show what you are owed, up to £22,530.",
-  "ico": "📦"
+  "ico": "📦",
+  "short": "Redundancy Pay",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "maternity-pay-calculator",
   "title": "Maternity Pay Calculator UK 2026/27 – SMP £194.32 a Week",
   "h1": "Statutory Maternity Pay (SMP) Calculator",
   "desc": "Free UK Statutory Maternity Pay calculator for 2026/27. See your 39 weeks of SMP: 90% of average earnings for 6 weeks, then £194.32 a week (or 90% if lower), plus eligibility.",
-  "ico": "👶"
+  "ico": "👶",
+  "short": "Maternity Pay",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "working-days-calculator",
   "title": "Working Days Calculator UK 2026 & 2027 – Excluding Bank Holidays",
   "h1": "Working Days Calculator (UK Bank Holidays)",
   "desc": "Count UK working days between two dates, excluding weekends and official bank holidays for England & Wales, Scotland or Northern Ireland. Includes the full 2026, 2027 and 2028 bank holiday lists.",
-  "ico": "📅"
+  "ico": "📅",
+  "short": "Working Days",
+  "cat": "UK money & work",
+  "kw": ""
  },
  {
   "slug": "age-calculator",
   "title": "Age Calculator – Exact Age in Years, Months & Days",
   "h1": "Age Calculator",
   "desc": "Free age calculator. Enter a date of birth to get your exact age in years, months and days, plus total weeks and days lived, the day you were born and a countdown to your next birthday.",
-  "ico": "🎂"
+  "ico": "🎂",
+  "short": "Age",
+  "cat": "Maths & everyday",
+  "kw": ""
  },
  {
   "slug": "date-calculator",
   "title": "Date Calculator – Add or Subtract Days, Weeks, Months & Years",
   "h1": "Date Calculator (Days Between Dates & Add Days)",
   "desc": "Free date calculator. Count the days between two dates or add and subtract days, weeks, months or years from any date, for deadlines, due dates and countdowns.",
-  "ico": "🗓️"
+  "ico": "🗓️",
+  "short": "Date",
+  "cat": "Maths & everyday",
+  "kw": ""
  },
  {
   "slug": "bmi-calculator",
   "title": "BMI Calculator UK – Stones & Pounds or kg (NHS Ranges)",
   "h1": "BMI Calculator (Metric or Stones & Pounds)",
   "desc": "Free UK BMI calculator for adults. Enter your height and weight in cm and kg or feet, stones and pounds to see your Body Mass Index, the NHS weight category and your healthy weight range.",
-  "ico": "⚖️"
+  "ico": "⚖️",
+  "short": "BMI",
+  "cat": "Maths & everyday",
+  "kw": ""
  },
  {
   "slug": "percentage-calculator",
   "title": "Percentage Calculator – % of a Number, % Change, Increase & Decrease",
   "h1": "Percentage Calculator",
   "desc": "Free percentage calculator. Find X% of a number, what percent one number is of another, percentage increase or decrease between two numbers, and add or take off a percentage.",
-  "ico": "％"
+  "ico": "％",
+  "short": "Percentage",
+  "cat": "Maths & everyday",
+  "kw": ""
  },
  {
   "slug": "discount-calculator",
   "title": "Discount Calculator – Sale Price, % Off & Extra Discounts",
   "h1": "Discount Calculator (Sale Price & Percent Off)",
   "desc": "Free discount calculator. Enter the price and percent off to see the sale price and how much you save, including stacked \"extra 10% off\" discounts and the real combined percentage.",
-  "ico": "🏷️"
+  "ico": "🏷️",
+  "short": "Discount",
+  "cat": "Maths & everyday",
+  "kw": ""
  },
  {
   "slug": "fraction-calculator",
   "title": "Fraction Calculator – Add, Subtract, Multiply & Divide Fractions",
   "h1": "Fraction Calculator (with Simplest Form)",
   "desc": "Free fraction calculator. Add, subtract, multiply or divide two fractions and get the answer in simplest form, as a mixed number and as a decimal, with the steps shown.",
-  "ico": "➗"
+  "ico": "➗",
+  "short": "Fraction",
+  "cat": "Maths & everyday",
+  "kw": ""
  },
  {
   "slug": "word-counter",
   "title": "Word Counter – Count Words, Characters, Sentences & Reading Time",
   "h1": "Word Counter & Character Counter",
   "desc": "Free online word counter. Paste text to count words, characters with and without spaces, sentences and paragraphs, and estimate reading and speaking time. Private: nothing is uploaded.",
-  "ico": "📝"
+  "ico": "📝",
+  "short": "Word Counter",
+  "cat": "Text",
+  "kw": ""
  },
  {
   "slug": "password-generator",
   "title": "Password Generator – Strong Random Passwords (NCSC Tips)",
   "h1": "Strong Password Generator",
   "desc": "Free secure password generator. Create strong random passwords or three-random-word passphrases in your browser using the Web Crypto API, with length, symbols and strength in bits.",
-  "ico": "🔐"
+  "ico": "🔐",
+  "short": "Password Generator",
+  "cat": "Developer & encoders",
+  "kw": ""
  },
  {
   "slug": "background-remover",
   "title": "Remove Background from Image Free – No Signup, Transparent PNG",
   "h1": "Free Background Remover (Private, In-Browser AI)",
   "desc": "Remove the background from any image free, with no signup and no watermark. Get a transparent PNG in seconds. Great for product photos and portraits. Runs privately in your browser, so photos are never uploaded.",
-  "ico": "✂️"
+  "ico": "✂️",
+  "short": "Background Remover",
+  "cat": "Image",
+  "kw": "remove bg transparent png cutout erase background product photo"
  },
  {
   "slug": "fahrenheit-to-celsius",
   "title": "Fahrenheit to Celsius Converter (°F to °C) – Free & Instant",
   "h1": "Fahrenheit to Celsius Converter (°F to °C)",
   "desc": "Convert °F (Fahrenheit) to °C (Celsius) instantly, or switch to any other temperature unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🌡️"
+  "ico": "🌡️",
+  "short": "Fahrenheit to Celsius",
+  "cat": "Unit converters",
+  "kw": "F C °F (Fahrenheit) °C (Celsius) convert"
  },
  {
   "slug": "feet-and-inches-to-cm-converter",
   "title": "Feet and Inches to cm Converter – Height in cm (and Back)",
   "h1": "Feet and Inches to cm Converter (Height)",
   "desc": "Convert height in feet and inches to centimetres, or cm back to feet and inches. Exact (1 inch = 2.54 cm), with a quick height chart from 4 ft 10 in to 6 ft 6 in.",
-  "ico": "📏"
+  "ico": "📏",
+  "short": "Feet & Inches to cm",
+  "cat": "Unit converters",
+  "kw": "height ft in cm convert"
  },
  {
   "slug": "grams-to-pounds-converter",
   "title": "Grams to Pounds Converter (g to lb) – Free & Instant",
   "h1": "Grams to Pounds Converter (g to lb)",
   "desc": "Convert grams to pounds instantly, or switch to any other mass unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "⚖️"
+  "ico": "⚖️",
+  "short": "Grams to Pounds",
+  "cat": "Unit converters",
+  "kw": "g lb grams pounds convert"
  },
  {
   "slug": "ounces-to-cups-converter",
   "title": "Ounces to Cups Converter (fl oz to cups) – Free & Instant",
   "h1": "Ounces to Cups Converter (fl oz to cups)",
   "desc": "Convert US fluid ounces to US cups instantly, or switch to any other volume unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🥛"
+  "ico": "🥛",
+  "short": "Ounces to Cups",
+  "cat": "Unit converters",
+  "kw": "floz cup US fluid ounces US cups convert"
  },
  {
   "slug": "mb-to-kb-converter",
   "title": "MB to KB Converter (Megabytes to Kilobytes) – Free & Instant",
   "h1": "MB to KB Converter (Megabytes to Kilobytes)",
   "desc": "Convert megabytes (MB) to kilobytes (KB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "💾"
+  "ico": "💾",
+  "short": "MB to KB",
+  "cat": "Unit converters",
+  "kw": "MB KB megabytes (MB) kilobytes (KB) convert"
  },
  {
   "slug": "kb-to-mb-converter",
   "title": "KB to MB Converter (Kilobytes to Megabytes) – Free & Instant",
   "h1": "KB to MB Converter (Kilobytes to Megabytes)",
   "desc": "Convert kilobytes (KB) to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "💾"
+  "ico": "💾",
+  "short": "KB to MB",
+  "cat": "Unit converters",
+  "kw": "KB MB kilobytes (KB) megabytes (MB) convert"
  },
  {
   "slug": "kb-to-gb-converter",
   "title": "KB to GB Converter (Kilobytes to Gigabytes) – Free & Instant",
   "h1": "KB to GB Converter (Kilobytes to Gigabytes)",
   "desc": "Convert kilobytes (KB) to gigabytes (GB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "💾"
+  "ico": "💾",
+  "short": "KB to GB",
+  "cat": "Unit converters",
+  "kw": "KB GB kilobytes (KB) gigabytes (GB) convert"
  },
  {
   "slug": "mb-to-gb-converter",
   "title": "MB to GB Converter (Megabytes to Gigabytes) – Free & Instant",
   "h1": "MB to GB Converter (Megabytes to Gigabytes)",
   "desc": "Convert megabytes (MB) to gigabytes (GB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "💾"
+  "ico": "💾",
+  "short": "MB to GB",
+  "cat": "Unit converters",
+  "kw": "MB GB megabytes (MB) gigabytes (GB) convert"
  },
  {
   "slug": "gb-to-mb-converter",
   "title": "GB to MB Converter (Gigabytes to Megabytes) – Free & Instant",
   "h1": "GB to MB Converter (Gigabytes to Megabytes)",
   "desc": "Convert gigabytes (GB) to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "💾"
+  "ico": "💾",
+  "short": "GB to MB",
+  "cat": "Unit converters",
+  "kw": "GB MB gigabytes (GB) megabytes (MB) convert"
  },
  {
   "slug": "gb-to-tb-converter",
   "title": "GB to TB Converter (Gigabytes to Terabytes) – Free & Instant",
   "h1": "GB to TB Converter (Gigabytes to Terabytes)",
   "desc": "Convert gigabytes (GB) to terabytes (TB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🗄️"
+  "ico": "🗄️",
+  "short": "GB to TB",
+  "cat": "Unit converters",
+  "kw": "GB TB gigabytes (GB) terabytes (TB) convert"
  },
  {
   "slug": "tb-to-gb-converter",
   "title": "TB to GB Converter (Terabytes to Gigabytes) – Free & Instant",
   "h1": "TB to GB Converter (Terabytes to Gigabytes)",
   "desc": "Convert terabytes (TB) to gigabytes (GB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🗄️"
+  "ico": "🗄️",
+  "short": "TB to GB",
+  "cat": "Unit converters",
+  "kw": "TB GB terabytes (TB) gigabytes (GB) convert"
  },
  {
   "slug": "tb-to-mb-converter",
   "title": "TB to MB Converter (Terabytes to Megabytes) – Free & Instant",
   "h1": "TB to MB Converter (Terabytes to Megabytes)",
   "desc": "Convert terabytes (TB) to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🗄️"
+  "ico": "🗄️",
+  "short": "TB to MB",
+  "cat": "Unit converters",
+  "kw": "TB MB terabytes (TB) megabytes (MB) convert"
  },
  {
   "slug": "mb-to-bytes-converter",
   "title": "MB to Bytes Converter (Megabytes to Bytes) – Free & Instant",
   "h1": "MB to Bytes Converter (Megabytes to Bytes)",
   "desc": "Convert megabytes (MB) to bytes instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🔢"
+  "ico": "🔢",
+  "short": "MB to Bytes",
+  "cat": "Unit converters",
+  "kw": "MB B megabytes (MB) bytes convert"
  },
  {
   "slug": "bytes-to-mb-converter",
   "title": "Bytes to MB Converter (Bytes to Megabytes) – Free & Instant",
   "h1": "Bytes to MB Converter (Bytes to Megabytes)",
   "desc": "Convert bytes to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🔢"
+  "ico": "🔢",
+  "short": "Bytes to MB",
+  "cat": "Unit converters",
+  "kw": "B MB bytes megabytes (MB) convert"
  },
  {
   "slug": "yards-to-miles-converter",
   "title": "Yards to Miles Converter (yd to mi) – Free & Instant",
   "h1": "Yards to Miles Converter (yd to mi)",
   "desc": "Convert yards to miles instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "🏃"
+  "ico": "🏃",
+  "short": "Yards to Miles",
+  "cat": "Unit converters",
+  "kw": "yd mi yards miles convert"
  },
  {
   "slug": "m-to-nautical-mile-converter",
   "title": "Metres to Nautical Miles Converter (m to nmi) – Free & Instant",
   "h1": "Metres to Nautical Miles Converter (m to nmi)",
   "desc": "Convert metres to nautical miles instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "⚓"
+  "ico": "⚓",
+  "short": "Metres to Nautical Miles",
+  "cat": "Unit converters",
+  "kw": "m nmi metres nautical miles convert"
  },
  {
   "slug": "length-converter",
   "title": "Length Converter – mm, cm, m, km, inches, feet, yards, miles – Free & Instant",
   "h1": "Length Converter – mm, cm, m, km, inches, feet, yards, miles",
   "desc": "Convert metres to feet instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "📐"
+  "ico": "📐",
+  "short": "Length",
+  "cat": "Unit converters",
+  "kw": "m ft metres feet convert"
  },
  {
   "slug": "in-to-mm-converter",
   "title": "Inches to mm Converter (in to mm) – Free & Instant",
   "h1": "Inches to mm Converter (in to mm)",
   "desc": "Convert inches to millimetres instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
-  "ico": "📏"
+  "ico": "📏",
+  "short": "Inches to mm",
+  "cat": "Unit converters",
+  "kw": "in mm inches millimetres convert"
  },
  {
   "slug": "case-converter",
   "title": "Case Converter – UPPERCASE, lowercase, Title Case, camelCase & more",
   "h1": "Case Converter (Upper, Lower, Title, Sentence, camelCase)",
   "desc": "Free online case converter. Change text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE or aLtErNaTiNg case, then copy it.",
-  "ico": "🔠"
+  "ico": "🔠",
+  "short": "Case Converter",
+  "cat": "Text",
+  "kw": "uppercase lowercase title capitalize text camelcase snake"
  },
  {
   "slug": "character-counter",
   "title": "Character Counter – Count Characters With & Without Spaces",
   "h1": "Character Counter",
   "desc": "Count characters with and without spaces, letters, digits, words and bytes as you type. Check limits for X/Twitter, SMS, meta descriptions, Instagram captions and UCAS.",
-  "ico": "🔤"
+  "ico": "🔤",
+  "short": "Character Counter",
+  "cat": "Text",
+  "kw": "letters count characters twitter sms limit"
  },
  {
   "slug": "letter-counter",
   "title": "Letter Counter – Count Letters (A–Z) and Letter Frequency",
   "h1": "Letter Counter & Letter Frequency",
   "desc": "Count only the letters in your text, ignoring spaces, numbers and punctuation. See vowels, consonants and how often each letter A–Z appears.",
-  "ico": "🅰️"
+  "ico": "🅰️",
+  "short": "Letter Counter",
+  "cat": "Text",
+  "kw": "count letters alphabet frequency vowels"
  },
  {
   "slug": "sentence-counter",
   "title": "Sentence Counter – Count Sentences, Average Sentence Length",
   "h1": "Sentence Counter",
   "desc": "Count the sentences in any text and see the average sentence length, the longest sentence and a readability tip. Handles abbreviations like Mr., Dr. and e.g.",
-  "ico": "📃"
+  "ico": "📃",
+  "short": "Sentence Counter",
+  "cat": "Text",
+  "kw": "count sentences readability average sentence length"
  },
  {
   "slug": "line-counter",
   "title": "Line Counter – Count Lines, Blank Lines & Remove Empty Lines",
   "h1": "Line Counter",
   "desc": "Count lines in text or code, including and excluding blank lines, and find the longest line. Optionally remove empty lines, trim whitespace, sort or de-duplicate lines.",
-  "ico": "📄"
+  "ico": "📄",
+  "short": "Line Counter",
+  "cat": "Text",
+  "kw": "count lines remove empty lines sort dedupe list"
  },
  {
   "slug": "characters-to-words",
   "title": "Characters to Words Converter – How Many Words Is X Characters?",
   "h1": "Characters to Words Converter",
   "desc": "Estimate how many words fit in a character limit, or how many characters a word count needs. Uses real English averages, with and without spaces.",
-  "ico": "🔁"
+  "ico": "🔁",
+  "short": "Characters to Words",
+  "cat": "Text",
+  "kw": "characters to words words to characters estimate"
  },
  {
   "slug": "spacebar-counter",
   "title": "Spacebar Counter – How Fast Can You Press Space? (Clicker Test)",
   "h1": "Spacebar Counter & Speed Test",
   "desc": "How many times can you press the spacebar in 10 seconds? A free spacebar clicker game with 5, 10, 30 and 60 second modes, presses per second and your personal best.",
-  "ico": "⌨️"
+  "ico": "⌨️",
+  "short": "Spacebar Counter",
+  "cat": "Text",
+  "kw": "space bar clicker game press speed"
  },
  {
   "slug": "tap-counter",
   "title": "Tap Counter – Online Click Counter & Tally Counter",
   "h1": "Tap Counter (Online Tally Counter)",
   "desc": "A free online tally counter. Tap, click or press a key to count people, laps, stitches, reps or anything else. It has plus and minus buttons, a target, sound and vibration, and saves your count.",
-  "ico": "👆"
+  "ico": "👆",
+  "short": "Tap Counter",
+  "cat": "Text",
+  "kw": "tally counter click counter clicker count people"
  },
  {
   "slug": "i-or-l-checker",
   "title": "I or l Checker – Is It a Capital I or Lowercase L? (Look-alike Finder)",
   "h1": "I or l Checker (Look-Alike Character Finder)",
   "desc": "Is it an uppercase I, a lowercase l, the digit 1 or a pipe? Paste text to reveal look-alike characters, including O vs 0 and Cyrillic or Greek letters used in phishing.",
-  "ico": "🔍"
+  "ico": "🔍",
+  "short": "I or l Checker",
+  "cat": "Text",
+  "kw": "capital i lowercase L homoglyph look alike"
  },
  {
   "slug": "haiku-checker",
   "title": "Haiku Checker – Count Syllables (5-7-5)",
   "h1": "Haiku Checker (5-7-5 Syllable Counter)",
   "desc": "Check if your poem is a haiku. Counts syllables in each line and checks the classic 5-7-5 pattern, with a per-word syllable breakdown.",
-  "ico": "🌸"
+  "ico": "🌸",
+  "short": "Haiku Checker",
+  "cat": "Text",
+  "kw": "syllable counter 5 7 5 poem"
  },
  {
   "slug": "fragment-or-sentence-checker",
   "title": "Sentence Fragment Checker – Is It a Complete Sentence?",
   "h1": "Fragment or Sentence Checker",
   "desc": "Check whether a sentence is complete or a fragment. It looks for a subject and verb, dangling conjunctions like \"because\" and \"although\", and missing end punctuation, with tips to fix it.",
-  "ico": "✍️"
+  "ico": "✍️",
+  "short": "Fragment Checker",
+  "cat": "Text",
+  "kw": "complete sentence grammar fragment run on"
  },
  {
   "slug": "word-to-phone-number-converter",
   "title": "Word to Phone Number Converter – Phoneword to Digits",
   "h1": "Phoneword to Number Converter",
   "desc": "Convert vanity phone numbers and phonewords such as 1-800-FLOWERS into digits using the standard keypad (ABC = 2, DEF = 3 …), and see the keypad letters for any number.",
-  "ico": "☎️"
+  "ico": "☎️",
+  "short": "Word to Phone Number",
+  "cat": "Text",
+  "kw": "vanity number phoneword keypad letters"
  },
  {
   "slug": "slug-generator",
   "title": "URL Slug Generator – SEO-Friendly Slugs from Any Title",
   "h1": "URL Slug Generator",
   "desc": "Turn any title into a clean, SEO-friendly URL slug. Removes accents, symbols and optional stop words, lower-cases it, and lets you choose the separator and maximum length.",
-  "ico": "🔗"
+  "ico": "🔗",
+  "short": "Slug Generator",
+  "cat": "Text",
+  "kw": "seo slug url permalink generator"
+ },
+ {
+  "slug": "uuid-generator",
+  "title": "UUID Generator – Random v4 UUIDs (GUIDs) in Bulk",
+  "h1": "UUID v4 Generator",
+  "desc": "Generate random version 4 UUIDs (GUIDs) in your browser using the Web Crypto API. Make 1 to 500 at once, in upper or lower case, with or without hyphens or braces.",
+  "ico": "🆔",
+  "short": "UUID Generator",
+  "cat": "Developer & encoders",
+  "kw": "guid uuid4 random id"
+ },
+ {
+  "slug": "base64-encoder-decoder",
+  "title": "Base64 Encode & Decode Online – UTF-8 Safe, URL-Safe Option",
+  "h1": "Base64 Encoder & Decoder",
+  "desc": "Encode text to Base64 or decode Base64 back to text. Handles UTF-8 (accents, emoji), has a URL-safe Base64url option, and runs entirely in your browser.",
+  "ico": "🔐",
+  "short": "Base64 Encode/Decode",
+  "cat": "Developer & encoders",
+  "kw": "b64 atob btoa decode encode"
+ },
+ {
+  "slug": "url-encoder-decoder",
+  "title": "URL Encoder & Decoder – Percent-Encode Online",
+  "h1": "URL Encoder & Decoder (Percent-Encoding)",
+  "desc": "Percent-encode text for safe use in URLs and query strings, or decode %20-style URLs back to readable text. Choose component or full-URL encoding.",
+  "ico": "🔗",
+  "short": "URL Encode/Decode",
+  "cat": "Developer & encoders",
+  "kw": "percent encoding urlencode decode"
+ },
+ {
+  "slug": "html-entity-encoder",
+  "title": "HTML Entity Encoder & Decoder – Escape &lt; &gt; &amp; Online",
+  "h1": "HTML Entity Encoder & Decoder",
+  "desc": "Escape text for safe use in HTML (&amp;lt; &amp;gt; &amp;amp; &amp;quot;) or decode HTML entities back to characters. Optionally encode all non-ASCII characters.",
+  "ico": "🏷️",
+  "short": "HTML Entities",
+  "cat": "Developer & encoders",
+  "kw": "html escape unescape entities"
+ },
+ {
+  "slug": "decimal-to-binary-converter",
+  "title": "Decimal to Binary Converter – and Hex, Octal, Any Base",
+  "h1": "Decimal to Binary (and Hex/Octal) Converter",
+  "desc": "Convert decimal numbers to binary, hexadecimal and octal, or from any base 2–36 to any other. Uses big integers, so very large numbers stay exact.",
+  "ico": "0️⃣",
+  "short": "Number Base Converter",
+  "cat": "Developer & encoders",
+  "kw": "binary hex octal base convert radix"
+ },
+ {
+  "slug": "character-identifier",
+  "title": "Character Identifier – Unicode Code Point, UTF-8 Bytes & Type",
+  "h1": "Unicode Character Identifier",
+  "desc": "Paste any character or text to see each character's Unicode code point (U+), decimal value, UTF-8 bytes and HTML entity. Spot hidden spaces, look-alike letters and emoji.",
+  "ico": "🔍",
+  "short": "Character Identifier",
+  "cat": "Developer & encoders",
+  "kw": "unicode code point identify symbol emoji"
+ },
+ {
+  "slug": "byte-counter",
+  "title": "Byte Counter – Count UTF-8 Bytes in Text",
+  "h1": "Byte Counter (UTF-8 Size of Text)",
+  "desc": "Count how many bytes your text takes in UTF-8, UTF-16 and ASCII. Check database column limits, SMS segments, HTTP headers and API payload sizes.",
+  "ico": "📦",
+  "short": "Byte Counter",
+  "cat": "Developer & encoders",
+  "kw": "utf8 bytes size string length"
+ },
+ {
+  "slug": "gray-code-to-hex-converter",
+  "title": "Gray Code to Hex Converter (and Binary)",
+  "h1": "Gray Code to Hex Converter",
+  "desc": "Convert reflected binary Gray code (written in hex or binary) into normal binary and hexadecimal. Shows each step.",
+  "ico": "🔁",
+  "short": "Gray Code to Hex",
+  "cat": "Developer & encoders",
+  "kw": "gray code reflected binary hex"
+ },
+ {
+  "slug": "hex-and-calculator",
+  "title": "Hex AND Calculator – Bitwise AND, OR, XOR, NOT on Hex Values",
+  "h1": "Hex AND / OR / XOR Calculator",
+  "desc": "Perform bitwise AND, OR, XOR, NAND and NOR on two hexadecimal numbers, with results in hex, binary and decimal. Useful for masks, flags and networking.",
+  "ico": "🧮",
+  "short": "Hex Bitwise Calculator",
+  "cat": "Developer & encoders",
+  "kw": "bitwise and or xor hex mask"
+ },
+ {
+  "slug": "hex-to-ascii-converter",
+  "title": "Hex to ASCII Converter – Hex to Text (and Text to Hex)",
+  "h1": "Hex to ASCII / Text Converter",
+  "desc": "Decode hexadecimal bytes to readable ASCII/UTF-8 text, or encode text to hex. Accepts spaces, 0x prefixes and colons.",
+  "ico": "🔡",
+  "short": "Hex to ASCII",
+  "cat": "Developer & encoders",
+  "kw": "hex to text decode ascii"
+ },
+ {
+  "slug": "hex-to-decimal-converter",
+  "title": "Hex to Decimal Converter – Hexadecimal to Number",
+  "h1": "Hex to Decimal Converter",
+  "desc": "Convert hexadecimal to decimal (and decimal to hex) with exact big-number support, plus a step-by-step working of the place values.",
+  "ico": "🔟",
+  "short": "Hex to Decimal",
+  "cat": "Developer & encoders",
+  "kw": "hexadecimal to decimal number"
+ },
+ {
+  "slug": "decimal-to-bcd-converter",
+  "title": "Decimal to BCD Converter (8421 Binary-Coded Decimal)",
+  "h1": "Decimal to BCD Converter",
+  "desc": "Convert a decimal number to Binary-Coded Decimal (8421 BCD), with each digit shown as its own 4-bit group, and compare it with plain binary.",
+  "ico": "🔢",
+  "short": "Decimal to BCD",
+  "cat": "Developer & encoders",
+  "kw": "bcd 8421 binary coded decimal"
  },
  {
   "slug": "image-resizer",
   "title": "Image Resizer – Resize Images to Exact Pixels or KB Online Free",
   "h1": "Free Image Resizer (Pixels, Percent or Presets)",
   "desc": "Resize JPG, PNG and WebP images online for free. Set exact pixels, a percentage or presets for Instagram, Facebook, YouTube, passport photos and email, with or without keeping the aspect ratio. Private: nothing is uploaded.",
-  "ico": "📐"
+  "ico": "📐",
+  "short": "Image Resizer",
+  "cat": "Image",
+  "kw": "resize photo picture pixels kb compress dimensions"
  },
  {
   "slug": "image-downscaler",
   "title": "Image Downscaler – Shrink Large Photos Without Blur (Max Width)",
   "h1": "Image Downscaler (High-Quality Shrink)",
   "desc": "Shrink big photos to a maximum width or height with sharp, high-quality multi-step downscaling. Perfect for email, websites and forms with upload limits. Free and private.",
-  "ico": "🔽"
+  "ico": "🔽",
+  "short": "Image Downscaler",
+  "cat": "Image",
+  "kw": "shrink image reduce size downsize photo"
  },
  {
   "slug": "image-quality-changer",
   "title": "Image Quality Changer – Compress JPG/WebP to a Target KB",
   "h1": "Image Quality Changer & Compressor",
   "desc": "Change the JPG or WebP quality of an image and see the file size instantly, or let it find the best quality for a target size such as 100 KB or 500 KB.",
-  "ico": "🎚️"
+  "ico": "🎚️",
+  "short": "Image Quality Changer",
+  "cat": "Image",
+  "kw": "compress jpg reduce kb quality webp"
  },
  {
   "slug": "grayscale-image-converter",
   "title": "Grayscale Image Converter – Black and White Photos Online Free",
   "h1": "Grayscale & Black-and-White Image Converter",
   "desc": "Convert any photo to grayscale or pure black and white online. Choose luminance, average or sepia, adjust contrast and threshold, and download a JPG or PNG. Free and private.",
-  "ico": "🌑"
+  "ico": "🌑",
+  "short": "Grayscale Converter",
+  "cat": "Image",
+  "kw": "black and white photo greyscale gray monochrome sepia"
  },
  {
   "slug": "image-filter-studio",
   "title": "Photo Filter Studio – Brightness, Contrast, Saturation, Blur & Presets",
   "h1": "Image Filter Studio",
   "desc": "Edit photos online with free filters: brightness, contrast, saturation, hue, blur, sepia and invert, plus one-click presets such as Vintage, Vivid, Noir and Cool. Download in full resolution.",
-  "ico": "🎨"
+  "ico": "🎨",
+  "short": "Image Filter Studio",
+  "cat": "Image",
+  "kw": "photo editor filters brightness contrast saturation"
  },
  {
   "slug": "glitch-image-maker",
   "title": "Glitch Image Maker – Glitch Art, RGB Split & VHS Effect Online",
   "h1": "Glitch Image Maker",
   "desc": "Make glitch art from any photo. RGB channel split, pixel-slice shifting, scanlines and noise for a VHS or cyberpunk look. Randomise, then download a PNG. Free and runs in your browser.",
-  "ico": "📺"
+  "ico": "📺",
+  "short": "Glitch Image Maker",
+  "cat": "Image",
+  "kw": "glitch effect vhs rgb split art"
  },
  {
   "slug": "manual-background-remover",
   "title": "Manual Background Eraser – Erase Background by Hand (Transparent PNG)",
   "h1": "Manual Background Eraser",
   "desc": "Erase image backgrounds by hand with a brush, or click to remove a background colour (magic wand). Restore mistakes, undo, and download a transparent PNG.",
-  "ico": "🧽"
+  "ico": "🧽",
+  "short": "Manual Background Eraser",
+  "cat": "Image",
+  "kw": "erase background eraser transparent png magic wand"
  },
  {
   "slug": "mic-test",
   "title": "Mic Test – Check Your Microphone Online (Live Level & Playback)",
   "h1": "Microphone Test",
   "desc": "Test your microphone online in seconds. See a live volume meter and waveform, choose between multiple mics, record a 5-second clip and play it back. Nothing is uploaded or saved.",
-  "ico": "🎙️"
+  "ico": "🎙️",
+  "short": "Mic Test",
+  "cat": "Audio",
+  "kw": "microphone test check mic online"
  },
  {
   "slug": "voice-recorder",
   "title": "Online Voice Recorder – Record Audio Free & Download (No Signup)",
   "h1": "Online Voice Recorder",
   "desc": "Record your voice online for free with no signup. Pause and resume, play back, then download as WebM/Opus or WAV. Recordings stay on your device.",
-  "ico": "⏺️"
+  "ico": "⏺️",
+  "short": "Voice Recorder",
+  "cat": "Audio",
+  "kw": "record audio voice online mp3 wav dictaphone"
  },
  {
   "slug": "tone-generator",
   "title": "Online Tone Generator – Sine, Square & Sawtooth Frequency Generator",
   "h1": "Tone Generator (Frequency Generator)",
   "desc": "Generate a pure tone at any frequency from 20 Hz to 20,000 Hz. Sine, square, triangle or sawtooth wave, with volume, stereo balance and musical-note presets.",
-  "ico": "〰️"
+  "ico": "〰️",
+  "short": "Tone Generator",
+  "cat": "Audio",
+  "kw": "frequency generator hz sine wave test tone"
  },
  {
   "slug": "noise-generator",
   "title": "White Noise Generator – White, Pink & Brown Noise Online (Sleep, Focus)",
   "h1": "White, Pink & Brown Noise Generator",
   "desc": "Free online white noise, pink noise and brown noise generator for sleep, focus, studying, babies and tinnitus masking. Set a sleep timer and fade out. It plays endlessly, with no ads.",
-  "ico": "🌊"
+  "ico": "🌊",
+  "short": "Noise Generator",
+  "cat": "Audio",
+  "kw": "white noise pink noise brown noise sleep focus baby"
  },
  {
   "slug": "binaural-beats-generator",
   "title": "Binaural Beats Generator – Delta, Theta, Alpha, Beta & Gamma Online",
   "h1": "Binaural Beats Generator",
   "desc": "Create binaural beats online for free. Choose a carrier tone and a beat frequency (delta 2 Hz to gamma 40 Hz), add optional pink noise, and set a timer. Use headphones.",
-  "ico": "🧠"
+  "ico": "🧠",
+  "short": "Binaural Beats",
+  "cat": "Audio",
+  "kw": "binaural beats delta theta alpha sleep focus meditation"
  },
  {
   "slug": "bpm-tap-counter",
   "title": "BPM Tap Counter – Tap Tempo to Find Beats Per Minute",
   "h1": "BPM Tap Tempo Counter",
   "desc": "Find the BPM of any song by tapping along. Tap the button or any key to the beat to get beats per minute, with half-time, double-time and ms-per-beat for delay settings.",
-  "ico": "🥁"
+  "ico": "🥁",
+  "short": "BPM Tap",
+  "cat": "Audio",
+  "kw": "tap tempo bpm counter beats per minute"
  },
  {
   "slug": "webcam-test",
   "title": "Webcam Test – Check Your Camera Online (Resolution, FPS & Snapshot)",
   "h1": "Webcam Test",
   "desc": "Test your webcam online. See a live preview with your camera's real resolution and frame rate, switch between cameras, mirror the view and take a snapshot. Video never leaves your device.",
-  "ico": "📷"
+  "ico": "📷",
+  "short": "Webcam Test",
+  "cat": "Video",
+  "kw": "camera test webcam check online resolution"
  },
  {
   "slug": "screen-recorder",
   "title": "Free Online Screen Recorder – Record Screen & Audio (No Download)",
   "h1": "Online Screen Recorder",
   "desc": "Record your screen, a window or a browser tab free in your browser, with system audio and microphone. No download, no watermark and no time limit. Save as WebM or MP4.",
-  "ico": "🖥️"
+  "ico": "🖥️",
+  "short": "Screen Recorder",
+  "cat": "Video",
+  "kw": "screen recorder record screen online free no watermark"
  },
  {
   "slug": "video-trimmer",
   "title": "Video Trimmer – Cut & Trim Video Online Free (No Upload, No Watermark)",
   "h1": "Online Video Trimmer",
   "desc": "Trim the start and end of a video online for free, without uploading it. Set in and out points with sliders or the current frame, preview, and export as WebM or MP4 with sound.",
-  "ico": "✂️"
+  "ico": "✂️",
+  "short": "Video Trimmer",
+  "cat": "Video",
+  "kw": "trim video cut video online clip mp4"
  },
  {
   "slug": "typing-test",
   "title": "Typing Test – Check Your Typing Speed (WPM) Free in 60 Seconds",
   "h1": "Typing Speed Test (WPM)",
   "desc": "Take a free typing speed test in 30, 60 or 120 seconds. See your words per minute (WPM), accuracy, errors and best score live as you type. No signup, and it works on keyboard and mobile.",
-  "ico": "⌨️"
+  "ico": "⌨️",
+  "short": "Typing Test",
+  "cat": "Tests & games",
+  "kw": "typing speed test wpm words per minute keyboard"
  },
  {
   "slug": "cps-tester",
   "title": "CPS Test – Clicks Per Second Test (1, 5, 10 & 60 Seconds)",
   "h1": "CPS Test (Clicks Per Second)",
   "desc": "Test your clicks per second (CPS) free. Choose 1, 5, 10, 30 or 60 seconds and click as fast as you can. You get your CPS, total clicks, rank and personal best. Works with a mouse and touch.",
-  "ico": "🖱️"
+  "ico": "🖱️",
+  "short": "CPS Test",
+  "cat": "Tests & games",
+  "kw": "cps test clicks per second click speed test kohi"
  },
  {
-  "slug": "typing-test",
-  "title": "Typing Test – Check Your Typing Speed (WPM) Free in 60 Seconds",
-  "h1": "Typing Speed Test (WPM)",
-  "desc": "Take a free typing speed test in 30, 60 or 120 seconds. See your words per minute (WPM), accuracy, errors and best score live as you type. No signup, and it works on keyboard and mobile.",
-  "ico": "⌨️"
+  "slug": "random-name-picker",
+  "title": "Random Name Picker – Pick a Winner from a List",
+  "h1": "Random Name Picker",
+  "desc": "Paste a list of names and pick one or more winners at random. Fair, crypto-secure and private, for classrooms, giveaways, raffles and team meetings.",
+  "ico": "🎯",
+  "short": "Random Name Picker",
+  "cat": "Random generators",
+  "kw": "pick winner raffle draw names wheel"
  },
  {
-  "slug": "cps-tester",
-  "title": "CPS Test – Clicks Per Second Test (1, 5, 10 & 60 Seconds)",
-  "h1": "CPS Test (Clicks Per Second)",
-  "desc": "Test your clicks per second (CPS) free. Choose 1, 5, 10, 30 or 60 seconds and click as fast as you can. You get your CPS, total clicks, rank and personal best. Works with a mouse and touch.",
-  "ico": "🖱️"
+  "slug": "random-picker",
+  "title": "Random Picker – Choose Randomly from Any List",
+  "h1": "Random Picker (Choose From a List)",
+  "desc": "Can't decide? List your options (restaurants, films, chores, questions) and let the random picker choose one, or shuffle the whole list into random order.",
+  "ico": "🎲",
+  "short": "Random Picker",
+  "cat": "Random generators",
+  "kw": "choose decide random list shuffle"
+ },
+ {
+  "slug": "random-group-generator",
+  "title": "Random Group Generator – Split a List Into Teams",
+  "h1": "Random Group / Team Generator",
+  "desc": "Split names into random groups or teams. Choose the number of groups or the people per group, and the sizes stay balanced. Great for classrooms, sports and workshops.",
+  "ico": "👥",
+  "short": "Random Group Generator",
+  "cat": "Random generators",
+  "kw": "teams split groups classroom random"
+ },
+ {
+  "slug": "random-number-picker",
+  "title": "Random Number Generator – Pick Numbers in a Range",
+  "h1": "Random Number Generator",
+  "desc": "Generate random whole numbers between any minimum and maximum, singly or in bulk, with or without repeats, and optionally sorted. Good for raffles, lotteries and games.",
+  "ico": "🔢",
+  "short": "Random Number Generator",
+  "cat": "Random generators",
+  "kw": "rng random number range lottery dice"
+ },
+ {
+  "slug": "random-birthday-generator",
+  "title": "Random Birthday Generator – Random Dates of Birth",
+  "h1": "Random Birthday Generator",
+  "desc": "Generate random birthdays (dates of birth) for an age range, for test data, sample forms, games or the birthday paradox. UK date format and age shown.",
+  "ico": "🎂",
+  "short": "Random Birthday Generator",
+  "cat": "Random generators",
+  "kw": "random date of birth dob test data"
+ },
+ {
+  "slug": "tip-calculator",
+  "title": "Tip Calculator UK – Work Out the Tip & Split the Bill",
+  "h1": "Tip Calculator (Split the Bill)",
+  "desc": "Work out a restaurant tip and split the bill between friends. Includes UK tipping norms (10–12.5%) and checks for a service charge already on the bill.",
+  "ico": "💷",
+  "short": "Tip Calculator",
+  "cat": "Maths & everyday",
+  "kw": "tipping gratuity split bill restaurant"
+ },
+ {
+  "slug": "sales-tax-calculator",
+  "title": "Sales Tax & VAT Calculator – Add or Remove Tax",
+  "h1": "Sales Tax and VAT Calculator",
+  "desc": "Add sales tax or VAT to a net price, or remove it from a gross price. Defaults to the UK 20% standard VAT rate, with 5% reduced and custom rates for US sales tax.",
+  "ico": "🧾",
+  "short": "Sales Tax / VAT",
+  "cat": "Maths & everyday",
+  "kw": "vat add remove sales tax 20%"
+ },
+ {
+  "slug": "greatest-common-factor-calculator",
+  "title": "Greatest Common Factor Calculator (HCF / GCD)",
+  "h1": "Greatest Common Factor (HCF) Calculator",
+  "desc": "Find the greatest common factor, also called the highest common factor (HCF) or GCD, of two or more numbers, with the Euclidean algorithm steps.",
+  "ico": "➗",
+  "short": "GCF / HCF",
+  "cat": "Maths & everyday",
+  "kw": "hcf gcd highest common factor"
+ },
+ {
+  "slug": "least-common-multiple-calculator",
+  "title": "Least Common Multiple Calculator (LCM)",
+  "h1": "Lowest Common Multiple (LCM) Calculator",
+  "desc": "Find the lowest (least) common multiple of two or more numbers instantly, with the HCF method explained. Useful for adding fractions and timetable problems.",
+  "ico": "✖️",
+  "short": "LCM",
+  "cat": "Maths & everyday",
+  "kw": "lcm lowest common multiple"
+ },
+ {
+  "slug": "average-calculator",
+  "title": "Average Calculator – Mean, Median, Mode & Range",
+  "h1": "Average Calculator (Mean, Median, Mode, Range)",
+  "desc": "Paste a list of numbers to get the mean, median, mode, range, sum, count and standard deviation. Handles commas, spaces and new lines.",
+  "ico": "📊",
+  "short": "Average Calculator",
+  "cat": "Maths & everyday",
+  "kw": "mean median mode range average"
+ },
+ {
+  "slug": "grade-calculator",
+  "title": "Grade Calculator – Weighted Average & Final Exam Mark Needed",
+  "h1": "Grade Calculator (Weighted Average)",
+  "desc": "Work out your weighted average grade from coursework and exams, and the mark you need in your final exam to reach a target. Works for UK university modules and GCSE/A-level coursework.",
+  "ico": "🎓",
+  "short": "Grade Calculator",
+  "cat": "Maths & everyday",
+  "kw": "weighted grade final exam needed university first 2:1"
+ },
+ {
+  "slug": "matrix-calculator",
+  "title": "Matrix Calculator – Multiply, Determinant, Inverse, Transpose",
+  "h1": "Matrix Calculator",
+  "desc": "Multiply, add or subtract matrices, or find the determinant, inverse and transpose of a matrix, in your browser. Type rows on separate lines.",
+  "ico": "🔲",
+  "short": "Matrix Calculator",
+  "cat": "Maths & everyday",
+  "kw": "matrix multiply determinant inverse linear algebra"
+ },
+ {
+  "slug": "day-of-the-year-calculator",
+  "title": "Day of the Year Calculator – What Day Number Is It?",
+  "h1": "Day of the Year Calculator",
+  "desc": "Find the day number (1–366) for any date, how many days are left in the year, the ISO week number and whether it is a leap year.",
+  "ico": "📆",
+  "short": "Day of the Year",
+  "cat": "Maths & everyday",
+  "kw": "day number julian date week number"
+ },
+ {
+  "slug": "date-to-words-converter",
+  "title": "Date to Words Converter – Write a Date in Words (UK & US)",
+  "h1": "Date to Words Converter",
+  "desc": "Write any date out in words in British and American style, for example \"the fifteenth of October twenty twenty-six\", plus a cheque-style date.",
+  "ico": "✍️",
+  "short": "Date to Words",
+  "cat": "Maths & everyday",
+  "kw": "date in words ordinal spell date"
+ },
+ {
+  "slug": "days-to-hours-converter",
+  "title": "Days to Hours Converter (and Minutes, Seconds)",
+  "h1": "Days to Hours Converter",
+  "desc": "Convert days to hours, minutes and seconds, or hours back to days and hours. Includes working-day hours and a quick conversion table.",
+  "ico": "⏱️",
+  "short": "Days to Hours",
+  "cat": "Maths & everyday",
+  "kw": "days hours minutes seconds time convert"
+ },
+ {
+  "slug": "average-time-calculator",
+  "title": "Average Time Calculator – Average of Lap, Run or Call Times",
+  "h1": "Average Time Calculator",
+  "desc": "Average a list of times in hh:mm:ss or mm:ss format, for parkrun results, lap times, call handling times or commutes. Also shows the total.",
+  "ico": "⌛",
+  "short": "Average Time",
+  "cat": "Maths & everyday",
+  "kw": "average lap time pace mean time"
+ },
+ {
+  "slug": "ohms-law-calculator",
+  "title": "Ohm's Law Calculator – Voltage, Current, Resistance & Power",
+  "h1": "Ohm's Law Calculator (V = I × R)",
+  "desc": "Enter any two of voltage, current and resistance to calculate the third, plus power in watts. Covers GCSE physics, electronics and LED resistor sums.",
+  "ico": "⚡",
+  "short": "Ohm's Law",
+  "cat": "Maths & everyday",
+  "kw": "ohms law voltage current resistance power gcse"
+ },
+ {
+  "slug": "earned-run-average-calculator",
+  "title": "ERA Calculator – Baseball Earned Run Average",
+  "h1": "Earned Run Average (ERA) Calculator",
+  "desc": "Calculate a baseball pitcher's earned run average from earned runs and innings pitched, with support for the .1/.2 thirds notation.",
+  "ico": "⚾",
+  "short": "ERA Calculator",
+  "cat": "Maths & everyday",
+  "kw": "era baseball pitcher earned run average"
+ },
+ {
+  "slug": "zodiac-sign-calculator",
+  "title": "Zodiac Sign Calculator – What Is My Star Sign?",
+  "h1": "Zodiac / Star Sign Calculator",
+  "desc": "Find your Western zodiac (star) sign from your birthday, plus its element and your Chinese zodiac animal from your birth year.",
+  "ico": "♈",
+  "short": "Zodiac Sign",
+  "cat": "Maths & everyday",
+  "kw": "star sign horoscope zodiac birthday chinese"
  }
 ]
