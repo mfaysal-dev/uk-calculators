@@ -145,5 +145,229 @@
   "h1": "Strong Password Generator",
   "desc": "Free secure password generator. Create strong random passwords or three-random-word passphrases in your browser using the Web Crypto API, with length, symbols and strength in bits.",
   "ico": "🔐"
+ },
+ {
+  "slug": "background-remover",
+  "title": "Remove Background from Image Free – No Signup, Transparent PNG",
+  "h1": "Free Background Remover (Private, In-Browser AI)",
+  "desc": "Remove the background from any image free, with no signup and no watermark. Get a transparent PNG in seconds. Great for product photos and portraits. Runs privately in your browser, so photos are never uploaded.",
+  "ico": "✂️"
+ },
+ {
+  "slug": "fahrenheit-to-celsius",
+  "title": "Fahrenheit to Celsius Converter (°F to °C) – Free & Instant",
+  "h1": "Fahrenheit to Celsius Converter (°F to °C)",
+  "desc": "Convert °F (Fahrenheit) to °C (Celsius) instantly, or switch to any other temperature unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🌡️"
+ },
+ {
+  "slug": "feet-and-inches-to-cm-converter",
+  "title": "Feet and Inches to cm Converter – Height in cm (and Back)",
+  "h1": "Feet and Inches to cm Converter (Height)",
+  "desc": "Convert height in feet and inches to centimetres, or cm back to feet and inches. Exact (1 inch = 2.54 cm), with a quick height chart from 4 ft 10 in to 6 ft 6 in.",
+  "ico": "📏"
+ },
+ {
+  "slug": "grams-to-pounds-converter",
+  "title": "Grams to Pounds Converter (g to lb) – Free & Instant",
+  "h1": "Grams to Pounds Converter (g to lb)",
+  "desc": "Convert grams to pounds instantly, or switch to any other mass unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "⚖️"
+ },
+ {
+  "slug": "ounces-to-cups-converter",
+  "title": "Ounces to Cups Converter (fl oz to cups) – Free & Instant",
+  "h1": "Ounces to Cups Converter (fl oz to cups)",
+  "desc": "Convert US fluid ounces to US cups instantly, or switch to any other volume unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🥛"
+ },
+ {
+  "slug": "mb-to-kb-converter",
+  "title": "MB to KB Converter (Megabytes to Kilobytes) – Free & Instant",
+  "h1": "MB to KB Converter (Megabytes to Kilobytes)",
+  "desc": "Convert megabytes (MB) to kilobytes (KB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "💾"
+ },
+ {
+  "slug": "kb-to-mb-converter",
+  "title": "KB to MB Converter (Kilobytes to Megabytes) – Free & Instant",
+  "h1": "KB to MB Converter (Kilobytes to Megabytes)",
+  "desc": "Convert kilobytes (KB) to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "💾"
+ },
+ {
+  "slug": "kb-to-gb-converter",
+  "title": "KB to GB Converter (Kilobytes to Gigabytes) – Free & Instant",
+  "h1": "KB to GB Converter (Kilobytes to Gigabytes)",
+  "desc": "Convert kilobytes (KB) to gigabytes (GB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "💾"
+ },
+ {
+  "slug": "mb-to-gb-converter",
+  "title": "MB to GB Converter (Megabytes to Gigabytes) – Free & Instant",
+  "h1": "MB to GB Converter (Megabytes to Gigabytes)",
+  "desc": "Convert megabytes (MB) to gigabytes (GB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "💾"
+ },
+ {
+  "slug": "gb-to-mb-converter",
+  "title": "GB to MB Converter (Gigabytes to Megabytes) – Free & Instant",
+  "h1": "GB to MB Converter (Gigabytes to Megabytes)",
+  "desc": "Convert gigabytes (GB) to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "💾"
+ },
+ {
+  "slug": "gb-to-tb-converter",
+  "title": "GB to TB Converter (Gigabytes to Terabytes) – Free & Instant",
+  "h1": "GB to TB Converter (Gigabytes to Terabytes)",
+  "desc": "Convert gigabytes (GB) to terabytes (TB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🗄️"
+ },
+ {
+  "slug": "tb-to-gb-converter",
+  "title": "TB to GB Converter (Terabytes to Gigabytes) – Free & Instant",
+  "h1": "TB to GB Converter (Terabytes to Gigabytes)",
+  "desc": "Convert terabytes (TB) to gigabytes (GB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🗄️"
+ },
+ {
+  "slug": "tb-to-mb-converter",
+  "title": "TB to MB Converter (Terabytes to Megabytes) – Free & Instant",
+  "h1": "TB to MB Converter (Terabytes to Megabytes)",
+  "desc": "Convert terabytes (TB) to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🗄️"
+ },
+ {
+  "slug": "mb-to-bytes-converter",
+  "title": "MB to Bytes Converter (Megabytes to Bytes) – Free & Instant",
+  "h1": "MB to Bytes Converter (Megabytes to Bytes)",
+  "desc": "Convert megabytes (MB) to bytes instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🔢"
+ },
+ {
+  "slug": "bytes-to-mb-converter",
+  "title": "Bytes to MB Converter (Bytes to Megabytes) – Free & Instant",
+  "h1": "Bytes to MB Converter (Bytes to Megabytes)",
+  "desc": "Convert bytes to megabytes (MB) instantly, or switch to any other data size unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🔢"
+ },
+ {
+  "slug": "yards-to-miles-converter",
+  "title": "Yards to Miles Converter (yd to mi) – Free & Instant",
+  "h1": "Yards to Miles Converter (yd to mi)",
+  "desc": "Convert yards to miles instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "🏃"
+ },
+ {
+  "slug": "m-to-nautical-mile-converter",
+  "title": "Metres to Nautical Miles Converter (m to nmi) – Free & Instant",
+  "h1": "Metres to Nautical Miles Converter (m to nmi)",
+  "desc": "Convert metres to nautical miles instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "⚓"
+ },
+ {
+  "slug": "length-converter",
+  "title": "Length Converter – mm, cm, m, km, inches, feet, yards, miles – Free & Instant",
+  "h1": "Length Converter – mm, cm, m, km, inches, feet, yards, miles",
+  "desc": "Convert metres to feet instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "📐"
+ },
+ {
+  "slug": "in-to-mm-converter",
+  "title": "Inches to mm Converter (in to mm) – Free & Instant",
+  "h1": "Inches to mm Converter (in to mm)",
+  "desc": "Convert inches to millimetres instantly, or switch to any other length unit. It shows the exact formula, a conversion table and worked examples, and runs in your browser.",
+  "ico": "📏"
+ },
+ {
+  "slug": "case-converter",
+  "title": "Case Converter – UPPERCASE, lowercase, Title Case, camelCase & more",
+  "h1": "Case Converter (Upper, Lower, Title, Sentence, camelCase)",
+  "desc": "Free online case converter. Change text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE or aLtErNaTiNg case, then copy it.",
+  "ico": "🔠"
+ },
+ {
+  "slug": "character-counter",
+  "title": "Character Counter – Count Characters With & Without Spaces",
+  "h1": "Character Counter",
+  "desc": "Count characters with and without spaces, letters, digits, words and bytes as you type. Check limits for X/Twitter, SMS, meta descriptions, Instagram captions and UCAS.",
+  "ico": "🔤"
+ },
+ {
+  "slug": "letter-counter",
+  "title": "Letter Counter – Count Letters (A–Z) and Letter Frequency",
+  "h1": "Letter Counter & Letter Frequency",
+  "desc": "Count only the letters in your text, ignoring spaces, numbers and punctuation. See vowels, consonants and how often each letter A–Z appears.",
+  "ico": "🅰️"
+ },
+ {
+  "slug": "sentence-counter",
+  "title": "Sentence Counter – Count Sentences, Average Sentence Length",
+  "h1": "Sentence Counter",
+  "desc": "Count the sentences in any text and see the average sentence length, the longest sentence and a readability tip. Handles abbreviations like Mr., Dr. and e.g.",
+  "ico": "📃"
+ },
+ {
+  "slug": "line-counter",
+  "title": "Line Counter – Count Lines, Blank Lines & Remove Empty Lines",
+  "h1": "Line Counter",
+  "desc": "Count lines in text or code, including and excluding blank lines, and find the longest line. Optionally remove empty lines, trim whitespace, sort or de-duplicate lines.",
+  "ico": "📄"
+ },
+ {
+  "slug": "characters-to-words",
+  "title": "Characters to Words Converter – How Many Words Is X Characters?",
+  "h1": "Characters to Words Converter",
+  "desc": "Estimate how many words fit in a character limit, or how many characters a word count needs. Uses real English averages, with and without spaces.",
+  "ico": "🔁"
+ },
+ {
+  "slug": "spacebar-counter",
+  "title": "Spacebar Counter – How Fast Can You Press Space? (Clicker Test)",
+  "h1": "Spacebar Counter & Speed Test",
+  "desc": "How many times can you press the spacebar in 10 seconds? A free spacebar clicker game with 5, 10, 30 and 60 second modes, presses per second and your personal best.",
+  "ico": "⌨️"
+ },
+ {
+  "slug": "tap-counter",
+  "title": "Tap Counter – Online Click Counter & Tally Counter",
+  "h1": "Tap Counter (Online Tally Counter)",
+  "desc": "A free online tally counter. Tap, click or press a key to count people, laps, stitches, reps or anything else. It has plus and minus buttons, a target, sound and vibration, and saves your count.",
+  "ico": "👆"
+ },
+ {
+  "slug": "i-or-l-checker",
+  "title": "I or l Checker – Is It a Capital I or Lowercase L? (Look-alike Finder)",
+  "h1": "I or l Checker (Look-Alike Character Finder)",
+  "desc": "Is it an uppercase I, a lowercase l, the digit 1 or a pipe? Paste text to reveal look-alike characters, including O vs 0 and Cyrillic or Greek letters used in phishing.",
+  "ico": "🔍"
+ },
+ {
+  "slug": "haiku-checker",
+  "title": "Haiku Checker – Count Syllables (5-7-5)",
+  "h1": "Haiku Checker (5-7-5 Syllable Counter)",
+  "desc": "Check if your poem is a haiku. Counts syllables in each line and checks the classic 5-7-5 pattern, with a per-word syllable breakdown.",
+  "ico": "🌸"
+ },
+ {
+  "slug": "fragment-or-sentence-checker",
+  "title": "Sentence Fragment Checker – Is It a Complete Sentence?",
+  "h1": "Fragment or Sentence Checker",
+  "desc": "Check whether a sentence is complete or a fragment. It looks for a subject and verb, dangling conjunctions like \"because\" and \"although\", and missing end punctuation, with tips to fix it.",
+  "ico": "✍️"
+ },
+ {
+  "slug": "word-to-phone-number-converter",
+  "title": "Word to Phone Number Converter – Phoneword to Digits",
+  "h1": "Phoneword to Number Converter",
+  "desc": "Convert vanity phone numbers and phonewords such as 1-800-FLOWERS into digits using the standard keypad (ABC = 2, DEF = 3 …), and see the keypad letters for any number.",
+  "ico": "☎️"
+ },
+ {
+  "slug": "slug-generator",
+  "title": "URL Slug Generator – SEO-Friendly Slugs from Any Title",
+  "h1": "URL Slug Generator",
+  "desc": "Turn any title into a clean, SEO-friendly URL slug. Removes accents, symbols and optional stop words, lower-cases it, and lets you choose the separator and maximum length.",
+  "ico": "🔗"
  }
 ]

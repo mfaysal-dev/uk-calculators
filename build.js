@@ -290,7 +290,7 @@ const tools = [
   sources:[['NHS – BMI healthy weight calculator','https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults'],['NHS – Obesity: diagnosis','https://www.nhs.uk/conditions/obesity/diagnosis/'],['NICE – Overweight and obesity management (NG246)','https://www.nice.org.uk/guidance/ng246']],
   faq:[['What is a healthy BMI in the UK?','18.5 to 24.9 for most adults, according to the NHS.'],['How do I work out BMI in stones and pounds?','Choose ft/in and st/lb and enter your height and weight. The calculator converts to metric and works it out.'],['Is BMI accurate for muscular people?','Not always. BMI doesn\u2019t separate muscle from fat, so very muscular people can get a high BMI.']]},
 
-{ generic:1, cat:'Maths', slug:'percentage-calculator', ico:'％', short:'Percentage', title:'Percentage Calculator – % of a Number, % Change, Increase & Decrease',
+{ generic:1, cat:'Calculators', slug:'percentage-calculator', ico:'％', short:'Percentage', title:'Percentage Calculator – % of a Number, % Change, Increase & Decrease',
   h1:'Percentage Calculator',
   desc:'Free percentage calculator. Find X% of a number, what percent one number is of another, percentage increase or decrease between two numbers, and add or take off a percentage.',
   intro:'Pick a question, type two numbers and get the answer with the working shown.',
@@ -305,7 +305,7 @@ const tools = [
   sources:[['BBC Bitesize – Percentages','https://www.bbc.co.uk/bitesize/topics/zm7hn39'],['ONS – Percentage vs percentage point (style guide)','https://service-manual.ons.gov.uk/content/numbers/percentages']],
   faq:[['How do I work out a percentage of a number?','Divide the percentage by 100 and multiply by the number. 15% of 80 = 0.15 × 80 = 12.'],['How do I calculate percentage increase?','(New − Old) ÷ Old × 100. From 50 to 65 is a 30% increase.'],['How do I find what percent one number is of another?','Divide the part by the whole and multiply by 100. 18 out of 24 = 75%.']]},
 
-{ generic:1, cat:'Money', slug:'discount-calculator', ico:'🏷️', short:'Discount', title:'Discount Calculator – Sale Price, % Off & Extra Discounts',
+{ generic:1, cat:'Calculators', slug:'discount-calculator', ico:'🏷️', short:'Discount', title:'Discount Calculator – Sale Price, % Off & Extra Discounts',
   h1:'Discount Calculator (Sale Price & Percent Off)',
   desc:'Free discount calculator. Enter the price and percent off to see the sale price and how much you save, including stacked "extra 10% off" discounts and the real combined percentage.',
   intro:'Enter the original price, the discount and any extra discount at the till.',
@@ -320,7 +320,7 @@ const tools = [
   sources:[['CMA – Pricing practices guidance','https://www.gov.uk/government/publications/pricing-practices-guidance'],['Citizens Advice – Misleading prices','https://www.citizensadvice.org.uk/consumer/somethings-gone-wrong-with-a-purchase/misleading-prices/']],
   faq:[['How do I calculate 20% off?','Multiply the price by 0.8. £60 with 20% off is £48.'],['Is 20% off plus 10% off the same as 30% off?','No. It is 28% off, because the 10% is taken from the already-reduced price.'],['How do I find the original price before a discount?','Divide the sale price by (1 − discount). £40 after 20% off was £40 ÷ 0.8 = £50.']]},
 
-{ generic:1, cat:'Maths', slug:'fraction-calculator', ico:'➗', short:'Fraction', title:'Fraction Calculator – Add, Subtract, Multiply & Divide Fractions',
+{ generic:1, cat:'Calculators', slug:'fraction-calculator', ico:'➗', short:'Fraction', title:'Fraction Calculator – Add, Subtract, Multiply & Divide Fractions',
   h1:'Fraction Calculator (with Simplest Form)',
   desc:'Free fraction calculator. Add, subtract, multiply or divide two fractions and get the answer in simplest form, as a mixed number and as a decimal, with the steps shown.',
   intro:'Type two fractions (use whole numbers like 3/1), pick an operation and see the simplified answer.',
@@ -374,8 +374,10 @@ const tools = [
   faq:[['Is this password generator safe?','Yes. Passwords are created in your browser with the secure Web Crypto API and are never sent or stored.'],['How long should a password be?','At least 12 to 16 random characters, or three random words, as the NCSC suggests.'],['What is a good passphrase?','Three or more truly random words, for example Copper-Puffin-Lantern42, not words linked to you.']]},
 
 ];
+tools.push(...require('./catalog/index.js')({seg,num,chk,money}));
+const CATS=[...new Set(tools.filter(t=>t.generic).map(t=>t.cat))];
 
-const nav = cur => `<nav class="nav" aria-label="Main"><a href="/">🇬🇧 UK Calculators</a><div class="links">${tools.filter(t=>!t.generic).map(t=>`<a href="/${t.slug}/"${t.slug===cur?' aria-current="page"':''}>${t.short}</a>`).join('')}<a href="/#everyday">More tools ▾</a></div></nav>`;
+const nav = cur => `<nav class="nav" aria-label="Main"><a href="/">🇬🇧 UK Calculators</a><div class="links">${tools.filter(t=>!t.generic).map(t=>`<a href="/${t.slug}/"${t.slug===cur?' aria-current="page"':''}>${t.short}</a>`).join('')}<a href="/#tools">All free tools ▾</a></div></nav>`;
 const foot = `<footer><div class="wrap"><p>Free UK calculators built by <a href="https://mfaysal.com/">Mahir Faysal – mfaysal.com</a> · <a href="https://github.com/mfaysal-dev/uk-calculators">Source on GitHub</a></p><p>Rates for the ${YEAR} tax year. Estimates only – not financial, tax or legal advice.</p></div></footer>`;
 const head = (t, url, ld) => `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(t.title)}</title><meta name="description" content="${esc(t.desc)}"><link rel="canonical" href="${url}">
@@ -387,28 +389,31 @@ function page(t) {
   const url = `${BASE}/${t.slug}/`;
   const ld = [{ '@context':'https://schema.org','@type':'WebApplication',name:t.h1,url,description:t.desc,applicationCategory:t.generic?'UtilitiesApplication':'FinanceApplication',operatingSystem:'Any',inLanguage:'en-GB',isAccessibleForFree:true,offers:{'@type':'Offer',price:'0',priceCurrency:'GBP'},author:{'@type':'Person',name:'Mahir Faysal',url:'https://mfaysal.com/'}},
     { '@context':'https://schema.org','@type':'FAQPage',mainEntity:t.faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))},
-    { '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'UK Calculators',item:BASE+'/'},{'@type':'ListItem',position:2,name:t.short,item:url}]}];
+    { '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:t.generic?'Free Tools':'UK Calculators',item:BASE+'/'},{'@type':'ListItem',position:2,name:t.short,item:url}]}];
   return head(t,url,ld)+`<body><a class="skip" href="#calc">Skip to calculator</a><header class="top"><div class="wrap">${nav(t.slug)}<div class="hero"><h1>${t.h1}</h1><p>${t.intro}${t.generic?' Free, private and runs in your browser.':' Updated for '+YEAR+'.'}</p></div></div></header>
-<main class="wrap"><div class="grid"><section class="card" id="calc" aria-labelledby="fh"><h2 id="fh">Your details</h2><form id="f" novalidate>${t.form}</form></section>
-<section class="card" aria-labelledby="rh"><h2 id="rh">Result</h2><div id="out" aria-live="polite"></div></section></div>
+<main class="wrap"><div class="grid${t.wide?' wide':''}"><section class="card" id="calc" aria-labelledby="fh"><h2 id="fh">${t.formTitle||'Your details'}</h2><form id="f" novalidate>${t.form}</form></section>
+<section class="card" aria-labelledby="rh"><h2 id="rh">${t.outTitle||'Result'}</h2><div id="out" aria-live="polite"></div></section></div>${t.after||''}
 <article class="card prose">${t.prose}<h2>Frequently asked questions</h2>${t.faq.map(([q,a])=>`<h3>${q}</h3><p>${a}</p>`).join('')}
-<h2>More free UK calculators</h2><ul class="related">${tools.filter(x=>x.slug!==t.slug).map(x=>`<li><a href="/${x.slug}/">${x.h1}</a></li>`).join('')}</ul>
-<h2>Sources</h2><ul>${t.sources.map(([n,u])=>`<li><a href="${u}" rel="noopener">${n}</a></li>`).join('')}</ul>
+${t.slug!=='background-remover'?'<p class="feature">✨ <strong>New:</strong> <a href="/background-remover/">Remove the background from any image free</a> – private, in your browser, transparent PNG.</p>':''}<h2>Related free tools</h2><ul class="related">${tools.filter(x=>x.slug!==t.slug&&(x.cat||'UK money')===(t.cat||'UK money')).slice(0,14).map(x=>`<li><a href="/${x.slug}/">${x.h1}</a></li>`).join('')}</ul><p><a href="/#tools">Browse all ${tools.length} free tools →</a></p>
+${t.sources.length?'<h2>Sources</h2>':''}<ul>${t.sources.map(([n,u])=>`<li><a href="${u}" rel="noopener">${n}</a></li>`).join('')}</ul>
 ${t.generic?'<p class="disclaimer"><strong>Note:</strong> This free tool runs entirely in your browser. No data is sent or stored. Results are for information only.</p>':`<p class="disclaimer"><strong>Disclaimer:</strong> This calculator gives an estimate using official ${YEAR} rates published on GOV.UK and devolved government sites (checked October 2026). It is not financial, tax or legal advice and may not cover every situation. Always check with the official source, HMRC, your lender or a qualified adviser before making decisions.</p>`}</article></main>
-${foot}<script src="/assets/calc.js"></script><script src="/assets/ui.js"></script><script>(function(){var out=document.getElementById('out');bind(document.getElementById('f'),function(){${t.js}});})();</script></body></html>`;
+${foot}<script src="/assets/calc.js"></script>${t.generic?'<script src="/assets/tools.js"></script>':''}<script src="/assets/ui.js"></script>${t.app?`<script>(function(){var out=document.getElementById('out'),form=document.getElementById('f');form.addEventListener('submit',function(e){e.preventDefault()});${t.app}})();</script>`:`<script>(function(){var out=document.getElementById('out');bind(document.getElementById('f'),function(){${t.js}});})();</script>`}${t.scripts||''}</body></html>`;
 }
 
 function home() {
-  const t = { title:'Free UK Calculators & Online Tools 2026 – Tax, Pay, Age, BMI & More', desc:'21 free, fast UK calculators using official GOV.UK rates: take-home pay, holiday entitlement, redundancy pay, maternity pay, working days, self-employed tax, dividend tax, minimum wage, stamp duty, student loan, VAT, mortgage and car tax, plus age, date, BMI, percentage, discount, fraction, word counter and password tools.', slug:'' };
+  const t = { title:'Free UK Calculators & Online Tools 2026 – Tax, Pay, Age, BMI & More', desc:'Free online tools and UK calculators that run in your browser: background remover, image resizer, unit converters, typing test, plus take-home pay, holiday entitlement, redundancy pay, maternity pay, working days, self-employed tax, dividend tax, minimum wage, stamp duty, student loan, VAT, mortgage and car tax, plus age, date, BMI, percentage, discount, fraction, word counter and password tools.', slug:'' };
   const ld = {'@context':'https://schema.org','@type':'WebSite',name:'UK Calculators',url:BASE+'/',inLanguage:'en-GB',author:{'@type':'Person',name:'Mahir Faysal',url:'https://mfaysal.com/'}};
   return head(t,BASE+'/',ld)+`<body><header class="top"><div class="wrap">${nav('')}<div class="hero"><h1>Free UK Calculators</h1><p>Quick, private and free – everything runs in your browser. Built on official ${YEAR} rates from GOV.UK.</p></div></div></header>
 <main class="wrap"><h2>UK tax, pay &amp; money calculators</h2><div class="tools">${tools.filter(x=>!x.generic).map(x=>`<a href="/${x.slug}/"><div class="card"><div class="ico" aria-hidden="true">${x.ico}</div><h2>${x.h1}</h2><p>${x.desc}</p></div></a>`).join('')}</div>
-<h2 id="everyday" style="margin-top:2rem">Everyday free tools</h2><div class="tools">${tools.filter(x=>x.generic).map(x=>`<a href="/${x.slug}/"><div class="card"><div class="ico" aria-hidden="true">${x.ico}</div><h2>${x.h1}</h2><p>${x.desc}</p></div></a>`).join('')}</div>
+<h2 id="tools" style="margin-top:2rem">All free online tools</h2><div class="filter"><input type="search" id="q" placeholder="Search ${tools.filter(x=>x.generic).length} tools… e.g. resize, kg, password" aria-label="Search tools"><div class="seg" id="cats"><label><input type="radio" name="c" value="" checked><span>All</span></label>${CATS.map(c=>`<label><input type="radio" name="c" value="${c}"><span>${c}</span></label>`).join('')}</div></div>
+${CATS.map(c=>`<section class="cat" data-cat="${c}"><h3>${c}</h3><div class="tools mini">${tools.filter(x=>x.cat===c).map(x=>`<a href="/${x.slug}/" data-k="${esc((x.h1+' '+x.short+' '+(x.kw||'')).toLowerCase())}"><div class="card"><div class="ico" aria-hidden="true">${x.ico}</div><h2>${x.h1}</h2></div></a>`).join('')}</div></section>`).join('')}
+<script>(function(){var q=document.getElementById('q');function f(){var v=q.value.toLowerCase().trim(),c=(document.querySelector('input[name=c]:checked')||{}).value||'';document.querySelectorAll('.cat').forEach(function(s){var n=0;s.style.display=c&&s.dataset.cat!==c?'none':'';s.querySelectorAll('a').forEach(function(a){var ok=!v||a.dataset.k.indexOf(v)>-1;a.style.display=ok?'':'none';if(ok)n++});if(!n)s.style.display='none'})}q.addEventListener('input',f);document.getElementById('cats').addEventListener('change',f)})();</script>
 <p class="disclaimer">Estimates only, not financial advice. No data leaves your device.</p></main>${foot}</body></html>`;
 }
 
 const out = path.join(__dirname, 'public'); fs.rmSync(out,{recursive:true,force:true}); fs.mkdirSync(out+'/assets',{recursive:true});
-for (const f of ['style.css','calc.js','ui.js']) fs.copyFileSync(path.join(__dirname,'assets',f), path.join(out,'assets',f));
+for (const f of ['style.css','calc.js','ui.js','tools.js']) fs.copyFileSync(path.join(__dirname,'assets',f), path.join(out,'assets',f));
+if (fs.existsSync(path.join(__dirname,'static'))) fs.cpSync(path.join(__dirname,'static'), out, {recursive:true});
 if (fs.existsSync(path.join(__dirname,'og'))) fs.cpSync(path.join(__dirname,'og'), path.join(out,'og'), {recursive:true});
 fs.writeFileSync(out+'/index.html', home());
 for (const t of tools) { fs.mkdirSync(out+'/'+t.slug,{recursive:true}); fs.writeFileSync(out+'/'+t.slug+'/index.html', page(t)); }
