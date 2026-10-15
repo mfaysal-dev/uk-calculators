@@ -1,18 +1,1 @@
-{
- "buildCommand": "CANON=https://mfaysal.com/free-tools node build.js",
- "outputDirectory": "public",
- "cleanUrls": true,
- "trailingSlash": true,
- "redirects": [
-  {
-   "source": "/",
-   "destination": "https://mfaysal.com/free-tools/",
-   "permanent": true
-  },
-  {
-   "source": "/:path*",
-   "destination": "https://mfaysal.com/free-tools/:path*",
-   "permanent": true
-  }
- ]
-}
+{"buildCommand": "CANON=https://mfaysal.com/free-tools node build.js", "outputDirectory": "public", "redirects": [{"source": "/(.*)", "destination": "https://mfaysal.com/free-tools/$1", "statusCode": 301}]}
