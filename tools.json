@@ -369,5 +369,145 @@
   "h1": "URL Slug Generator",
   "desc": "Turn any title into a clean, SEO-friendly URL slug. Removes accents, symbols and optional stop words, lower-cases it, and lets you choose the separator and maximum length.",
   "ico": "🔗"
+ },
+ {
+  "slug": "image-resizer",
+  "title": "Image Resizer – Resize Images to Exact Pixels or KB Online Free",
+  "h1": "Free Image Resizer (Pixels, Percent or Presets)",
+  "desc": "Resize JPG, PNG and WebP images online for free. Set exact pixels, a percentage or presets for Instagram, Facebook, YouTube, passport photos and email, with or without keeping the aspect ratio. Private: nothing is uploaded.",
+  "ico": "📐"
+ },
+ {
+  "slug": "image-downscaler",
+  "title": "Image Downscaler – Shrink Large Photos Without Blur (Max Width)",
+  "h1": "Image Downscaler (High-Quality Shrink)",
+  "desc": "Shrink big photos to a maximum width or height with sharp, high-quality multi-step downscaling. Perfect for email, websites and forms with upload limits. Free and private.",
+  "ico": "🔽"
+ },
+ {
+  "slug": "image-quality-changer",
+  "title": "Image Quality Changer – Compress JPG/WebP to a Target KB",
+  "h1": "Image Quality Changer & Compressor",
+  "desc": "Change the JPG or WebP quality of an image and see the file size instantly, or let it find the best quality for a target size such as 100 KB or 500 KB.",
+  "ico": "🎚️"
+ },
+ {
+  "slug": "grayscale-image-converter",
+  "title": "Grayscale Image Converter – Black and White Photos Online Free",
+  "h1": "Grayscale & Black-and-White Image Converter",
+  "desc": "Convert any photo to grayscale or pure black and white online. Choose luminance, average or sepia, adjust contrast and threshold, and download a JPG or PNG. Free and private.",
+  "ico": "🌑"
+ },
+ {
+  "slug": "image-filter-studio",
+  "title": "Photo Filter Studio – Brightness, Contrast, Saturation, Blur & Presets",
+  "h1": "Image Filter Studio",
+  "desc": "Edit photos online with free filters: brightness, contrast, saturation, hue, blur, sepia and invert, plus one-click presets such as Vintage, Vivid, Noir and Cool. Download in full resolution.",
+  "ico": "🎨"
+ },
+ {
+  "slug": "glitch-image-maker",
+  "title": "Glitch Image Maker – Glitch Art, RGB Split & VHS Effect Online",
+  "h1": "Glitch Image Maker",
+  "desc": "Make glitch art from any photo. RGB channel split, pixel-slice shifting, scanlines and noise for a VHS or cyberpunk look. Randomise, then download a PNG. Free and runs in your browser.",
+  "ico": "📺"
+ },
+ {
+  "slug": "manual-background-remover",
+  "title": "Manual Background Eraser – Erase Background by Hand (Transparent PNG)",
+  "h1": "Manual Background Eraser",
+  "desc": "Erase image backgrounds by hand with a brush, or click to remove a background colour (magic wand). Restore mistakes, undo, and download a transparent PNG.",
+  "ico": "🧽"
+ },
+ {
+  "slug": "mic-test",
+  "title": "Mic Test – Check Your Microphone Online (Live Level & Playback)",
+  "h1": "Microphone Test",
+  "desc": "Test your microphone online in seconds. See a live volume meter and waveform, choose between multiple mics, record a 5-second clip and play it back. Nothing is uploaded or saved.",
+  "ico": "🎙️"
+ },
+ {
+  "slug": "voice-recorder",
+  "title": "Online Voice Recorder – Record Audio Free & Download (No Signup)",
+  "h1": "Online Voice Recorder",
+  "desc": "Record your voice online for free with no signup. Pause and resume, play back, then download as WebM/Opus or WAV. Recordings stay on your device.",
+  "ico": "⏺️"
+ },
+ {
+  "slug": "tone-generator",
+  "title": "Online Tone Generator – Sine, Square & Sawtooth Frequency Generator",
+  "h1": "Tone Generator (Frequency Generator)",
+  "desc": "Generate a pure tone at any frequency from 20 Hz to 20,000 Hz. Sine, square, triangle or sawtooth wave, with volume, stereo balance and musical-note presets.",
+  "ico": "〰️"
+ },
+ {
+  "slug": "noise-generator",
+  "title": "White Noise Generator – White, Pink & Brown Noise Online (Sleep, Focus)",
+  "h1": "White, Pink & Brown Noise Generator",
+  "desc": "Free online white noise, pink noise and brown noise generator for sleep, focus, studying, babies and tinnitus masking. Set a sleep timer and fade out. It plays endlessly, with no ads.",
+  "ico": "🌊"
+ },
+ {
+  "slug": "binaural-beats-generator",
+  "title": "Binaural Beats Generator – Delta, Theta, Alpha, Beta & Gamma Online",
+  "h1": "Binaural Beats Generator",
+  "desc": "Create binaural beats online for free. Choose a carrier tone and a beat frequency (delta 2 Hz to gamma 40 Hz), add optional pink noise, and set a timer. Use headphones.",
+  "ico": "🧠"
+ },
+ {
+  "slug": "bpm-tap-counter",
+  "title": "BPM Tap Counter – Tap Tempo to Find Beats Per Minute",
+  "h1": "BPM Tap Tempo Counter",
+  "desc": "Find the BPM of any song by tapping along. Tap the button or any key to the beat to get beats per minute, with half-time, double-time and ms-per-beat for delay settings.",
+  "ico": "🥁"
+ },
+ {
+  "slug": "webcam-test",
+  "title": "Webcam Test – Check Your Camera Online (Resolution, FPS & Snapshot)",
+  "h1": "Webcam Test",
+  "desc": "Test your webcam online. See a live preview with your camera's real resolution and frame rate, switch between cameras, mirror the view and take a snapshot. Video never leaves your device.",
+  "ico": "📷"
+ },
+ {
+  "slug": "screen-recorder",
+  "title": "Free Online Screen Recorder – Record Screen & Audio (No Download)",
+  "h1": "Online Screen Recorder",
+  "desc": "Record your screen, a window or a browser tab free in your browser, with system audio and microphone. No download, no watermark and no time limit. Save as WebM or MP4.",
+  "ico": "🖥️"
+ },
+ {
+  "slug": "video-trimmer",
+  "title": "Video Trimmer – Cut & Trim Video Online Free (No Upload, No Watermark)",
+  "h1": "Online Video Trimmer",
+  "desc": "Trim the start and end of a video online for free, without uploading it. Set in and out points with sliders or the current frame, preview, and export as WebM or MP4 with sound.",
+  "ico": "✂️"
+ },
+ {
+  "slug": "typing-test",
+  "title": "Typing Test – Check Your Typing Speed (WPM) Free in 60 Seconds",
+  "h1": "Typing Speed Test (WPM)",
+  "desc": "Take a free typing speed test in 30, 60 or 120 seconds. See your words per minute (WPM), accuracy, errors and best score live as you type. No signup, and it works on keyboard and mobile.",
+  "ico": "⌨️"
+ },
+ {
+  "slug": "cps-tester",
+  "title": "CPS Test – Clicks Per Second Test (1, 5, 10 & 60 Seconds)",
+  "h1": "CPS Test (Clicks Per Second)",
+  "desc": "Test your clicks per second (CPS) free. Choose 1, 5, 10, 30 or 60 seconds and click as fast as you can. You get your CPS, total clicks, rank and personal best. Works with a mouse and touch.",
+  "ico": "🖱️"
+ },
+ {
+  "slug": "typing-test",
+  "title": "Typing Test – Check Your Typing Speed (WPM) Free in 60 Seconds",
+  "h1": "Typing Speed Test (WPM)",
+  "desc": "Take a free typing speed test in 30, 60 or 120 seconds. See your words per minute (WPM), accuracy, errors and best score live as you type. No signup, and it works on keyboard and mobile.",
+  "ico": "⌨️"
+ },
+ {
+  "slug": "cps-tester",
+  "title": "CPS Test – Clicks Per Second Test (1, 5, 10 & 60 Seconds)",
+  "h1": "CPS Test (Clicks Per Second)",
+  "desc": "Test your clicks per second (CPS) free. Choose 1, 5, 10, 30 or 60 seconds and click as fast as you can. You get your CPS, total clicks, rank and personal best. Works with a mouse and touch.",
+  "ico": "🖱️"
  }
 ]
