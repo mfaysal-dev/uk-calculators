@@ -8,3 +8,4 @@
     var q=new URLSearchParams(location.search);q.forEach(function(v,k){var els=form.querySelectorAll('[name="'+k+'"]');els.forEach(function(el){if(el.type==='radio')el.checked=el.value===v;else if(el.type==='checkbox')el.checked=v==='1';else el.value=v})});
     fn();};
 })();
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-copy]');if(!b)return;var el=document.getElementById(b.getAttribute('data-copy'));if(el&&navigator.clipboard){navigator.clipboard.writeText(el.innerText);b.textContent='Copied ✓'}});

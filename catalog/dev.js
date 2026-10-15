@@ -1,7 +1,7 @@
 // Developer & encoding tools. Original code and copy.
 const { T: mk, ta, txt, sel } = require('./_h.js'); const T = mk('Developer & encoders');
 const E = `var E=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')};`;
-const copy = `'<button type="button" class="btn alt" onclick="navigator.clipboard.writeText(document.getElementById(\\'res\\').innerText);this.textContent=\\'Copied ✓\\'">Copy</button>'`;
+const copy = `'<button type="button" class="btn alt" data-copy="res">Copy</button>'`;
 const res = (expr) => `'<div id="res" class="mono" style="white-space:pre-wrap;word-break:break-all">'+E(${expr})+'</div>'+${copy}`;
 module.exports = ({ seg, num, chk }) => [
 T('uuid-generator','🆔','UUID Generator','UUID Generator – Random v4 UUIDs (GUIDs) in Bulk','UUID v4 Generator',

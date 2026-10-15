@@ -1,6 +1,6 @@
 const { T: mk, ta, txt, sel } = require('./_h.js'); const T = mk('Text');
 const esc = `var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')};`;
-const copyBtn = `'<button type="button" class="btn alt" onclick="navigator.clipboard.writeText(document.getElementById(\\'res\\').innerText);this.textContent=\\'Copied ✓\\'">Copy</button>'`;
+const copyBtn = `'<button type="button" class="btn alt" data-copy="res">Copy</button>'`;
 module.exports = ({ seg, chk }) => [
 T('case-converter','🔠','Case Converter','Case Converter – UPPERCASE, lowercase, Title Case, camelCase & more','Case Converter (Upper, Lower, Title, Sentence, camelCase)',
  'Free online case converter. Change text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE or aLtErNaTiNg case, then copy it.',

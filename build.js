@@ -1,6 +1,7 @@
 // Generates static pages. Usage: BASE=https://example.vercel.app node build.js
 const fs = require('fs'); const path = require('path');
 const BASE = (process.env.BASE || 'https://uk-calculators.vercel.app').replace(/\/$/, '');
+const CANON = (process.env.CANON || BASE).replace(/\/$/, '');
 const YEAR = '2026/27';
 const esc = s => s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
 const money = (id, label, v, hint='') => `<label for="${id}">${label}${hint?` <span class="hint">${hint}</span>`:''}</label><div class="money"><span aria-hidden="true">£</span><input type="number" inputmode="decimal" min="0" step="any" id="${id}" name="${id}" value="${v}"></div>`;
@@ -381,7 +382,7 @@ const CATS=[...new Set(tools.filter(t=>t.generic).map(t=>t.cat))];
 const nav = cur => `<nav class="nav" aria-label="Main"><a href="/">🇬🇧 UK Calculators</a><div class="links">${tools.filter(t=>!t.generic).map(t=>`<a href="/${t.slug}/"${t.slug===cur?' aria-current="page"':''}>${t.short}</a>`).join('')}<a href="/#tools">All free tools ▾</a></div></nav>`;
 const foot = `<footer><div class="wrap"><p>Free UK calculators built by <a href="https://mfaysal.com/">Mahir Faysal – mfaysal.com</a> · <a href="https://github.com/mfaysal-dev/uk-calculators">Source on GitHub</a></p><p>Rates for the ${YEAR} tax year. Estimates only – not financial, tax or legal advice.</p></div></footer>`;
 const head = (t, url, ld) => `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(t.title)}</title><meta name="description" content="${esc(t.desc)}"><link rel="canonical" href="${url}">
+<title>${esc(t.title)}</title><meta name="description" content="${esc(t.desc)}"><link rel="canonical" href="${url.replace(BASE,CANON)}">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(t.title)}"><meta property="og:description" content="${esc(t.desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${BASE}/og/${t.slug||'home'}.png"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1d4ed8"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>£</text></svg>">
 <link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">${JSON.stringify(ld)}</script></head>`;
