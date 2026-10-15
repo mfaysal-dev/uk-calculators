@@ -89,5 +89,61 @@
   "h1": "Working Days Calculator (UK Bank Holidays)",
   "desc": "Count UK working days between two dates, excluding weekends and official bank holidays for England & Wales, Scotland or Northern Ireland. Includes the full 2026, 2027 and 2028 bank holiday lists.",
   "ico": "📅"
+ },
+ {
+  "slug": "age-calculator",
+  "title": "Age Calculator – Exact Age in Years, Months & Days",
+  "h1": "Age Calculator",
+  "desc": "Free age calculator. Enter a date of birth to get your exact age in years, months and days, plus total weeks and days lived, the day you were born and a countdown to your next birthday.",
+  "ico": "🎂"
+ },
+ {
+  "slug": "date-calculator",
+  "title": "Date Calculator – Add or Subtract Days, Weeks, Months & Years",
+  "h1": "Date Calculator (Days Between Dates & Add Days)",
+  "desc": "Free date calculator. Count the days between two dates or add and subtract days, weeks, months or years from any date, for deadlines, due dates and countdowns.",
+  "ico": "🗓️"
+ },
+ {
+  "slug": "bmi-calculator",
+  "title": "BMI Calculator UK – Stones & Pounds or kg (NHS Ranges)",
+  "h1": "BMI Calculator (Metric or Stones & Pounds)",
+  "desc": "Free UK BMI calculator for adults. Enter your height and weight in cm and kg or feet, stones and pounds to see your Body Mass Index, the NHS weight category and your healthy weight range.",
+  "ico": "⚖️"
+ },
+ {
+  "slug": "percentage-calculator",
+  "title": "Percentage Calculator – % of a Number, % Change, Increase & Decrease",
+  "h1": "Percentage Calculator",
+  "desc": "Free percentage calculator. Find X% of a number, what percent one number is of another, percentage increase or decrease between two numbers, and add or take off a percentage.",
+  "ico": "％"
+ },
+ {
+  "slug": "discount-calculator",
+  "title": "Discount Calculator – Sale Price, % Off & Extra Discounts",
+  "h1": "Discount Calculator (Sale Price & Percent Off)",
+  "desc": "Free discount calculator. Enter the price and percent off to see the sale price and how much you save, including stacked \"extra 10% off\" discounts and the real combined percentage.",
+  "ico": "🏷️"
+ },
+ {
+  "slug": "fraction-calculator",
+  "title": "Fraction Calculator – Add, Subtract, Multiply & Divide Fractions",
+  "h1": "Fraction Calculator (with Simplest Form)",
+  "desc": "Free fraction calculator. Add, subtract, multiply or divide two fractions and get the answer in simplest form, as a mixed number and as a decimal, with the steps shown.",
+  "ico": "➗"
+ },
+ {
+  "slug": "word-counter",
+  "title": "Word Counter – Count Words, Characters, Sentences & Reading Time",
+  "h1": "Word Counter & Character Counter",
+  "desc": "Free online word counter. Paste text to count words, characters with and without spaces, sentences and paragraphs, and estimate reading and speaking time. Private: nothing is uploaded.",
+  "ico": "📝"
+ },
+ {
+  "slug": "password-generator",
+  "title": "Password Generator – Strong Random Passwords (NCSC Tips)",
+  "h1": "Strong Password Generator",
+  "desc": "Free secure password generator. Create strong random passwords or three-random-word passphrases in your browser using the Web Crypto API, with length, symbols and strength in bits.",
+  "ico": "🔐"
  }
 ]

@@ -251,6 +251,37 @@
     return { calendarDays: days, workingDays: wk, weekendDays: 0, bankHolidays: hols, weeks: r2(days / 7) };
   }
 
-  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax, takeHome: takeHome, minWage: minWage, selfEmployed: selfEmployed, dividendTax: dividendTax, stacked: stacked, redundancy: redundancy, maternityPay: maternityPay, holiday: holiday, workingDays: workingDays };
+  function P8(s) { var a = String(s).split('-'); return Date.UTC(+a[0], +a[1] - 1, +a[2]); }
+  function age(o) {
+    var b = P8(o.dob), t = P8(o.on); if (isNaN(b) || isNaN(t) || t < b) return null;
+    var B = new Date(b), T = new Date(t), y = T.getUTCFullYear() - B.getUTCFullYear(), m = T.getUTCMonth() - B.getUTCMonth(), d = T.getUTCDate() - B.getUTCDate();
+    if (d < 0) { m--; d += new Date(Date.UTC(T.getUTCFullYear(), T.getUTCMonth(), 0)).getUTCDate(); } if (m < 0) { y--; m += 12; }
+    var days = Math.round((t - b) / 864e5), nb = Date.UTC(T.getUTCFullYear(), B.getUTCMonth(), B.getUTCDate()); if (nb < t) nb = Date.UTC(T.getUTCFullYear() + 1, B.getUTCMonth(), B.getUTCDate());
+    return { years: y, months: m, days: d, totalDays: days, totalWeeks: Math.floor(days / 7), totalMonths: y * 12 + m, daysToBirthday: Math.round((nb - t) / 864e5), weekday: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][B.getUTCDay()] };
+  }
+  function dateAdd(o) { var d = new Date(P8(o.start)), n = Math.trunc(+o.amount || 0) * (o.op === 'sub' ? -1 : 1);
+    if (o.unit === 'weeks') d.setUTCDate(d.getUTCDate() + 7 * n); else if (o.unit === 'months') { var day = d.getUTCDate(); d.setUTCDate(1); d.setUTCMonth(d.getUTCMonth() + n); var last = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate(); d.setUTCDate(Math.min(day, last)); }
+    else if (o.unit === 'years') { var dd = d.getUTCDate(), mm = d.getUTCMonth(); d.setUTCDate(1); d.setUTCFullYear(d.getUTCFullYear() + n); d.setUTCDate(Math.min(dd, new Date(Date.UTC(d.getUTCFullYear(), mm + 1, 0)).getUTCDate())); }
+    else d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+  function dateDiff(o) { var a = P8(o.start), b = P8(o.end); if (isNaN(a) || isNaN(b)) return null; var days = Math.round((b - a) / 864e5); return { days: days, weeks: r2(days / 7), hours: days * 24 }; }
+  function bmi(o) { var kg, m; if (o.units === 'imperial') { kg = ((+o.st || 0) * 14 + (+o.lb || 0)) * 0.45359237; m = ((+o.ft || 0) * 12 + (+o.inch || 0)) * 0.0254; } else { kg = +o.kg || 0; m = (+o.cm || 0) / 100; }
+    if (!kg || !m) return null; var v = Math.round(kg / (m * m) * 10) / 10;
+    var cat = v < 18.5 ? 'Underweight' : v < 25 ? 'Healthy weight' : v < 30 ? 'Overweight' : v < 40 ? 'Obese' : 'Severely obese';
+    return { bmi: v, category: cat, healthyMinKg: r2(18.5 * m * m), healthyMaxKg: r2(24.9 * m * m) }; }
+  function percent(o) { var a = +o.a, b = +o.b;
+    switch (o.mode) { case 'of': return r2(a / 100 * b); case 'is': return b ? r2(a / b * 100) : null; case 'change': return a ? r2((b - a) / Math.abs(a) * 100) : null;
+      case 'inc': return r2(b * (1 + a / 100)); case 'dec': return r2(b * (1 - a / 100)); } return null; }
+  function discount(o) { var p = Math.max(0, +o.price || 0), d1 = Math.min(100, Math.max(0, +o.pct || 0)), d2 = Math.min(100, Math.max(0, +o.extra || 0));
+    var after = p * (1 - d1 / 100) * (1 - d2 / 100); return { final: r2(after), saved: r2(p - after), effectivePct: p ? r2((1 - after / p) * 100) : 0 }; }
+  function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { var t = b; b = a % b; a = t; } return a || 1; }
+  function fraction(o) { var a = +o.n1, b = +o.d1, c = +o.n2, d = +o.d2, n, m;
+    if (!b || !d) return null; if (o.op === '+') { n = a * d + c * b; m = b * d; } else if (o.op === '-') { n = a * d - c * b; m = b * d; } else if (o.op === '*') { n = a * c; m = b * d; } else { if (!c) return null; n = a * d; m = b * c; }
+    if (m < 0) { n = -n; m = -m; } var g = gcd(n, m); n /= g; m /= g; var w = Math.trunc(n / m), r = Math.abs(n % m);
+    return { n: n, d: m, decimal: Math.round(n / m * 1e6) / 1e6, mixed: m === 1 ? String(n) : (w ? w + ' ' + r + '/' + m : n + '/' + m) }; }
+  function textStats(t) { t = String(t || ''); var w = t.trim() ? t.trim().split(/\s+/).length : 0; var sent = (t.match(/[^.!?]+[.!?]+(\s|$)/g) || []).length || (t.trim() ? 1 : 0);
+    return { words: w, chars: t.length, charsNoSpaces: t.replace(/\s/g, '').length, sentences: t.trim() ? sent : 0, paragraphs: t.trim() ? t.split(/\n\s*\n/).filter(function (x) { return x.trim(); }).length : 0, readingMin: Math.ceil(w / 238) || 0, speakingMin: Math.ceil(w / 140) || 0 }; }
+  function passwordStrength(len, pools) { return Math.round(len * Math.log2(Math.max(1, pools))); }
+
+  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax, takeHome: takeHome, minWage: minWage, selfEmployed: selfEmployed, dividendTax: dividendTax, stacked: stacked, redundancy: redundancy, maternityPay: maternityPay, holiday: holiday, workingDays: workingDays, age: age, dateAdd: dateAdd, dateDiff: dateDiff, bmi: bmi, percent: percent, discount: discount, fraction: fraction, textStats: textStats, passwordStrength: passwordStrength };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.UKCalc = api;
 })(this);

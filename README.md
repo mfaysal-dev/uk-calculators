@@ -1,6 +1,6 @@
 # UK Calculators (2026/27)
 
-Thirteen free, fast, privacy-friendly UK calculators. Everything runs in the browser – no tracking, no data sent anywhere.
+21 free, fast, privacy-friendly UK calculators. Everything runs in the browser – no tracking, no data sent anywhere.
 
 **Live:** https://uk-calculators.vercel.app · **Author:** [Mahir Faysal – mfaysal.com](https://mfaysal.com/)
 
@@ -32,3 +32,7 @@ Vanilla HTML/CSS/JS, no dependencies.
 Estimates only – not financial, tax or legal advice. Always check the official source.
 
 MIT © Mahir Faysal
+
+## Everyday tools
+
+Age calculator, date calculator, BMI calculator (NHS ranges, st/lb), percentage calculator, discount calculator, fraction calculator, word counter and password generator (Web Crypto). All of them run entirely client-side, with no API keys and no tracking.
