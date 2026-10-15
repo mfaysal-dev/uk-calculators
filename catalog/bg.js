@@ -24,14 +24,27 @@ return [{ generic:1, cat:'Image', slug:'background-remover', ico:'✂️', short
   drop.addEventListener('drop',function(ev){ev.preventDefault();if(ev.dataTransfer.files[0])go(ev.dataTransfer.files[0])});file.addEventListener('change',function(){if(file.files[0])go(file.files[0])});
   window.addEventListener('paste',function(ev){var it=[].slice.call(ev.clipboardData.items||[]).find(function(i){return i.type.indexOf('image')===0});if(it)go(it.getAsFile())});
   function status(t,p){out.innerHTML='<p><strong>'+t+'</strong></p>'+(p!=null?'<progress max="100" value="'+p+'" style="width:100%"></progress>':'')}
-  async function load(){window.__note='';var q=document.querySelector('input[name=q]:checked').value;if(seg&&segKey===q)return seg;status('Loading AI engine…');
-    var T=await import('/vendor/transformers-4.3.1.min.js');T.env.backends.onnx.wasm.wasmPaths='/vendor/ort/';if(window.FT_MODELS){T.env.allowRemoteModels=false;T.env.allowLocalModels=true;T.env.localModelPath=window.FT_MODELS}var gpu=false;try{gpu=!!(navigator.gpu&&await navigator.gpu.requestAdapter())}catch(e){}if(window.__noGpu)gpu=false;if(q==='hq'&&!gpu){q='fast';window.__note='High quality needs WebGPU (Chrome, Edge or Safari 26+ on a desktop). Used Fast mode instead.';if(seg&&segKey==='fast')return seg}var files={};
-    var opt={device:gpu?'webgpu':'wasm',dtype:q==='hq'?'fp16':'fp32',progress_callback:function(p){if(p.status==='progress'&&p.total){files[p.file]=[p.loaded,p.total];var l=0,t=0;for(var k in files){l+=files[k][0];t+=files[k][1]}status('Downloading AI model (first time only)… '+Math.round(l/1e6)+' / '+Math.round(t/1e6)+' MB',l/t*100)}}};
-    try{seg=await T.pipeline('background-removal',q==='hq'?'onnx-community/BiRefNet_lite-ONNX':'Xenova/modnet',opt)}catch(e){opt.device='wasm';seg=await T.pipeline('background-removal',q==='hq'?'onnx-community/BiRefNet_lite-ONNX':'Xenova/modnet',opt)}
-    segKey=q;return seg}
-  async function go(f){if(!/^image\\//.test(f.type)){status('Please choose an image file.');return}src=URL.createObjectURL(f);
-    try{var s=await load();status('Removing background… this takes a few seconds');var t0=performance.now();var r=await s(src);r=Array.isArray(r)?r[0]:r;mask=r.toCanvas();render(f.name,Math.round(performance.now()-t0))}
-    catch(e){if(!window.__noGpu){window.__noGpu=1;seg=null;return go(f)}status('Sorry, that did not work: '+(e&&e.message||e)+'. Try "Fast" mode or a smaller image.')}}
+  var T=null,cache={},MODELS={hq:'onnx-community/BiRefNet_lite-ONNX',fast:'Xenova/modnet'};
+  async function gpuOK(){if(window.__gpuBad||!navigator.gpu)return false;try{var a=await navigator.gpu.requestAdapter();if(!a)return false;var m=a.limits&&a.limits.maxStorageBuffersPerShaderStage;return !(m&&m<17)}catch(e){return false}}
+  async function engine(){if(T)return T;status('Loading AI engine…');T=await import('/vendor/transformers-4.3.1.min.js');T.env.backends.onnx.wasm.wasmPaths='/vendor/ort/';if(window.FT_MODELS){T.env.allowRemoteModels=false;T.env.allowLocalModels=true;T.env.localModelPath=window.FT_MODELS}return T}
+  async function getSeg(q,dev){var k=q+'|'+dev;if(cache[k])return cache[k];await engine();var files={};
+    var opt={device:dev,dtype:q==='hq'?'fp16':'fp32',progress_callback:function(p){if(p.status==='progress'&&p.total){files[p.file]=[p.loaded,p.total];var l=0,t=0;for(var x in files){l+=files[x][0];t+=files[x][1]}status('Downloading AI model (first time only)… '+Math.round(l/1e6)+' / '+Math.round(t/1e6)+' MB',l/t*100)}}};
+    cache[k]=await T.pipeline('background-removal',MODELS[q],opt);return cache[k]}
+  function drop1(k){try{cache[k]&&cache[k].dispose&&cache[k].dispose()}catch(e){}delete cache[k]}
+  async function plan(){var want=document.querySelector('input[name=q]:checked').value,gpu=await gpuOK(),p=[];
+    if(want==='hq'&&gpu)p.push(['hq','webgpu']);if(gpu)p.push(['fast','webgpu']);p.push(['fast','wasm']);return {want:want,gpu:gpu,steps:p}}
+  var W=null,wid=0;function viaWorker(u){return new Promise(function(res,rej){if(!W){try{W=new Worker('/assets/bg-worker.js',{type:'module'})}catch(e){return rej(e)}}var id=++wid,files={},tD=performance.now();window.__dl=0;status('Loading AI engine…');
+    W.onmessage=function(ev){var m=ev.data;if(m.id!==id)return;if(m.progress){var p=m.progress;files[p.file]=[p.loaded,p.total];var l=0,t=0;for(var x in files){l+=files[x][0];t+=files[x][1]}status('Downloading AI model (first time only)… '+Math.round(l/1e6)+' / '+Math.round(t/1e6)+' MB',l/t*100)}
+      else if(m.stage==='run'){window.__dl=performance.now()-tD;status('Removing background… this takes a few seconds')}else if(m.error){W.terminate();W=null;rej(new Error(m.error))}
+      else if(m.done){var c=document.createElement('canvas');c.width=m.done.width;c.height=m.done.height;c.getContext('2d').putImageData(new ImageData(m.done.data,m.done.width,m.done.height),0,0);res(c)}};
+    W.onerror=function(e){W.terminate();W=null;rej(new Error('worker failed'))};W.postMessage({id:id,src:u,models:window.FT_MODELS||null})})}
+  async function go(f){if(!f||!/^image\\//.test(f.type)){status('Please choose an image file (JPG, PNG or WebP).');return}src=URL.createObjectURL(f);window.__note='';
+    var P=await plan();if(P.want==='hq'&&!P.gpu)window.__note='High quality needs a graphics chip that supports it (WebGPU), so Fast mode was used instead. The result is still good for most photos.';
+    for(var n=0;n<P.steps.length;n++){var q=P.steps[n][0],dev=P.steps[n][1],k=q+'|'+dev;
+      try{if(window.__ftFail&&window.__ftFail.indexOf(dev)>-1)throw new Error('simulated '+dev+' failure');var t0;if(dev==='wasm'){t0=performance.now();mask=await viaWorker(src);t0+=window.__dl||0}else{var s=await getSeg(q,dev);status('Removing background… this takes a few seconds');t0=performance.now();var r=await s(src);r=Array.isArray(r)?r[0]:r;mask=r.toCanvas()}
+        if(q!==P.want&&!window.__note)window.__note='High quality didn\\'t work on this device, so Fast mode was used instead.';window.__used=k;render(f.name,Math.round(performance.now()-t0));return}
+      catch(e){console.warn('[bg-remover] '+k+' failed, trying next option',e);drop1(k);if(dev==='webgpu')window.__gpuBad=1}}
+    status('Sorry, we couldn\\'t process this image on your device. Try a smaller image, close other tabs, or use another browser (Chrome or Edge work best).')}
   function render(name,ms){var bg=document.querySelector('input[name=bg]:checked').value;if(bg==='custom')bg=document.getElementById('col').value;
     var c=document.createElement('canvas');c.width=mask.width;c.height=mask.height;var x=c.getContext('2d');if(bg!=='none'){x.fillStyle=bg;x.fillRect(0,0,c.width,c.height)}x.drawImage(mask,0,0);
     var base=(name||'image').replace(/\\.[^.]+$/,'')+'-no-bg';out.innerHTML='<div class="'+(bg==='none'?'checker':'')+'" style="padding:6px"></div><p class="hint">'+c.width+'×'+c.height+' px'+(ms?' · done in '+(ms/1000).toFixed(1)+' s on your device':'')+'</p>'+(window.__note?'<p class="hint">'+window.__note+'</p>':'');

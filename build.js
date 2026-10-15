@@ -414,7 +414,7 @@ ${CATS.map(c=>`<section class="cat" data-cat="${c}"><h3>${c}</h3><div class="too
 }
 
 const out = path.join(__dirname, 'public'); fs.rmSync(out,{recursive:true,force:true}); fs.mkdirSync(out+'/assets',{recursive:true});
-for (const f of ['style.css','calc.js','ui.js','tools.js']) fs.copyFileSync(path.join(__dirname,'assets',f), path.join(out,'assets',f));
+for (const f of ['style.css','calc.js','ui.js','tools.js','bg-worker.js']) fs.copyFileSync(path.join(__dirname,'assets',f), path.join(out,'assets',f));
 if (fs.existsSync(path.join(__dirname,'static'))) fs.cpSync(path.join(__dirname,'static'), out, {recursive:true});
 if (fs.existsSync(path.join(__dirname,'og'))) fs.cpSync(path.join(__dirname,'og'), path.join(out,'og'), {recursive:true});
 fs.writeFileSync(out+'/index.html', home());
