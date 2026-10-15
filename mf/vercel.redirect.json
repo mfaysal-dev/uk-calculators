@@ -1,1 +1,26 @@
-{"buildCommand": "CANON=https://mfaysal.com/free-tools node build.js", "outputDirectory": "public", "redirects": [{"source": "/(.*)", "destination": "https://mfaysal.com/free-tools/$1", "statusCode": 301}]}
+{
+ "buildCommand": "CANON=https://mfaysal.com/free-tools node build.js",
+ "outputDirectory": "public",
+ "redirects": [
+  {
+   "source": "/",
+   "destination": "https://mfaysal.com/free-tools/",
+   "statusCode": 301
+  },
+  {
+   "source": "/:slug([a-z0-9-]+)",
+   "destination": "https://mfaysal.com/free-tools/:slug/",
+   "statusCode": 301
+  },
+  {
+   "source": "/:slug([a-z0-9-]+)/",
+   "destination": "https://mfaysal.com/free-tools/:slug/",
+   "statusCode": 301
+  },
+  {
+   "source": "/:path*",
+   "destination": "https://mfaysal.com/free-tools/:path*",
+   "statusCode": 301
+  }
+ ]
+}
