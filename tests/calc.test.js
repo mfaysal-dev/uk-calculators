@@ -67,3 +67,19 @@ test('Higher rate: £60,000 salary + £5,000 div = 35.75%×4,500 = £1,608.75', 
 test('Straddle: £45,000 + £10,000 div', () => { const r = C.dividendTax({ salary: 45000, dividends: 10000 }); /* taxable sal 32,430; allowance to 32,930; basic to 37,700: 4,770@10.75=512.775; 4,730@35.75=1690.975 */ assert.equal(r.dividendTax, 2203.75); });
 test('Additional rate above £125,140', () => { const r = C.dividendTax({ salary: 150000, dividends: 10000 }); assert.equal(r.personalAllowance, 0); assert.equal(r.dividendTax, r2(9500 * 0.3935)); });
 function r2(n){return Math.round((n+Number.EPSILON)*100)/100}
+test('Redundancy: age 45, 10 yrs, £600/wk = 12 weeks', () => { const r = C.redundancy({ age: 45, years: 10, weeklyPay: 600 }); assert.equal(r.weeks, 12); assert.equal(r.total, 7200); });
+test('Redundancy max = £22,530', () => assert.equal(C.redundancy({ age: 64, years: 30, weeklyPay: 2000 }).total, 22530));
+test('Redundancy under 2 years = not eligible', () => assert.equal(C.redundancy({ age: 30, years: 1, weeklyPay: 500 }).eligible, false));
+test('Redundancy age 23, 4 yrs: 1 full + 3 half = 2.5 weeks', () => assert.equal(C.redundancy({ age: 23, years: 4, weeklyPay: 400 }).weeks, 2.5));
+test('SMP £500 AWE: 6×£450 + 33×£194.32', () => assert.equal(C.maternityPay({ awe: 500 }).total, 9112.56));
+test('SMP low earner uses 90% throughout', () => assert.equal(C.maternityPay({ awe: 200 }).later, 180));
+test('SMP below LEL £129 not eligible', () => assert.equal(C.maternityPay({ awe: 120 }).eligible, false));
+test('Holiday 5 days = 28 days', () => assert.equal(C.holiday({ daysPerWeek: 5 }).days, 28));
+test('Holiday 6 days capped at 28', () => assert.equal(C.holiday({ daysPerWeek: 6 }).days, 28));
+test('Holiday 3 days = 16.8 days', () => assert.equal(C.holiday({ daysPerWeek: 3 }).days, 16.8));
+test('Holiday part-year 6 months 5 days = 14', () => assert.equal(C.holiday({ daysPerWeek: 5, months: 6 }).days, 14));
+test('Holiday 20 hrs/wk = 112 hours', () => assert.equal(C.holiday({ mode: 'hours', hoursPerWeek: 20, daysPerWeek: 4 }).hours, 112));
+test('Holiday irregular 12.07% of 1000h', () => assert.equal(C.holiday({ mode: 'irregular', hoursWorked: 1000 }).hours, 120.7));
+test('Working days Dec 2026 England = 21', () => assert.equal(C.workingDays({ start: '2026-12-01', end: '2026-12-31', region: 'eng' }).workingDays, 21));
+test('Working days 2027 England = 253', () => assert.equal(C.workingDays({ start: '2027-01-01', end: '2027-12-31', region: 'eng' }).workingDays, 253));
+test('Working days Scotland Nov 30 2026 is a holiday', () => assert.equal(C.workingDays({ start: '2026-11-30', end: '2026-11-30', region: 'sco' }).workingDays, 0));

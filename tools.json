@@ -61,5 +61,33 @@
   "h1": "Dividend Tax Calculator",
   "desc": "Free UK dividend tax calculator for 2026/27. Uses the £500 dividend allowance and the new 10.75%, 35.75% and 39.35% rates with your salary to show exactly what you owe.",
   "ico": "📈"
+ },
+ {
+  "slug": "holiday-entitlement-calculator",
+  "title": "Holiday Entitlement Calculator UK 2026 – Days, Hours & Part-Time",
+  "h1": "Holiday Entitlement Calculator (Statutory Annual Leave)",
+  "desc": "Free UK holiday entitlement calculator. Work out statutory annual leave for full-time, part-time, irregular-hours and part-year workers using the GOV.UK 5.6 weeks and 12.07% rules.",
+  "ico": "🏖️"
+ },
+ {
+  "slug": "redundancy-pay-calculator",
+  "title": "Redundancy Pay Calculator UK 2026 – Statutory Redundancy (£751 Cap)",
+  "h1": "Statutory Redundancy Pay Calculator",
+  "desc": "Free UK statutory redundancy pay calculator for 2026. Uses your age, years of service and weekly pay with the £751 weekly cap (from 6 April 2026) to show what you are owed, up to £22,530.",
+  "ico": "📦"
+ },
+ {
+  "slug": "maternity-pay-calculator",
+  "title": "Maternity Pay Calculator UK 2026/27 – SMP £194.32 a Week",
+  "h1": "Statutory Maternity Pay (SMP) Calculator",
+  "desc": "Free UK Statutory Maternity Pay calculator for 2026/27. See your 39 weeks of SMP: 90% of average earnings for 6 weeks, then £194.32 a week (or 90% if lower), plus eligibility.",
+  "ico": "👶"
+ },
+ {
+  "slug": "working-days-calculator",
+  "title": "Working Days Calculator UK 2026 & 2027 – Excluding Bank Holidays",
+  "h1": "Working Days Calculator (UK Bank Holidays)",
+  "desc": "Count UK working days between two dates, excluding weekends and official bank holidays for England & Wales, Scotland or Northern Ireland. Includes the full 2026, 2027 and 2028 bank holiday lists.",
+  "ico": "📅"
  }
 ]

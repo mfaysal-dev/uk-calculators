@@ -54,6 +54,10 @@
     // Self-employed NI 2026/27 (GOV.UK self-employed-national-insurance-rates)
     class4: { lpl: 12570, upl: 50270, main: .06, upper: .02 }, class2: { spt: 7105, weekly: 3.65 },
     // Dividends 2026/27 (GOV.UK tax-on-dividends): allowance £500; bands on taxable income use UK (non-Scottish) bands
+    redundancy: { weekCap: 751, maxYears: 20, minYears: 2 },
+    smp: { rate: 194.32, lel: 129, weeks: 39, higherWeeks: 6 },
+    holiday: { weeks: 5.6, maxDays: 28, irregularPct: .1207 },
+    bankHolidays: {"eng":[["2025-01-01","New Year\u2019s Day"],["2025-04-18","Good Friday"],["2025-04-21","Easter Monday"],["2025-05-05","Early May bank holiday"],["2025-05-26","Spring bank holiday"],["2025-08-25","Summer bank holiday"],["2025-12-25","Christmas Day"],["2025-12-26","Boxing Day"],["2026-01-01","New Year\u2019s Day"],["2026-04-03","Good Friday"],["2026-04-06","Easter Monday"],["2026-05-04","Early May bank holiday"],["2026-05-25","Spring bank holiday"],["2026-08-31","Summer bank holiday"],["2026-12-25","Christmas Day"],["2026-12-28","Boxing Day"],["2027-01-01","New Year\u2019s Day"],["2027-03-26","Good Friday"],["2027-03-29","Easter Monday"],["2027-05-03","Early May bank holiday"],["2027-05-31","Spring bank holiday"],["2027-08-30","Summer bank holiday"],["2027-12-27","Christmas Day"],["2027-12-28","Boxing Day"],["2028-01-03","New Year\u2019s Day"],["2028-04-14","Good Friday"],["2028-04-17","Easter Monday"],["2028-05-01","Early May bank holiday"],["2028-05-29","Spring bank holiday"],["2028-08-28","Summer bank holiday"],["2028-12-25","Christmas Day"],["2028-12-26","Boxing Day"]],"sco":[["2025-01-01","New Year\u2019s Day"],["2025-01-02","2nd January"],["2025-04-18","Good Friday"],["2025-05-05","Early May bank holiday"],["2025-05-26","Spring bank holiday"],["2025-08-04","Summer bank holiday"],["2025-12-01","St Andrew\u2019s Day"],["2025-12-25","Christmas Day"],["2025-12-26","Boxing Day"],["2026-01-01","New Year\u2019s Day"],["2026-01-02","2nd January"],["2026-04-03","Good Friday"],["2026-05-04","Early May bank holiday"],["2026-05-25","Spring bank holiday"],["2026-06-15","World Cup bank holiday"],["2026-08-03","Summer bank holiday"],["2026-11-30","St Andrew\u2019s Day"],["2026-12-25","Christmas Day"],["2026-12-28","Boxing Day"],["2027-01-01","New Year\u2019s Day"],["2027-01-04","2nd January"],["2027-03-26","Good Friday"],["2027-05-03","Early May bank holiday"],["2027-05-31","Spring bank holiday"],["2027-08-02","Summer bank holiday"],["2027-11-30","St Andrew\u2019s Day"],["2027-12-27","Christmas Day"],["2027-12-28","Boxing Day"],["2028-01-03","New Year\u2019s Day"],["2028-01-04","2nd January"],["2028-04-14","Good Friday"],["2028-05-01","Early May bank holiday"],["2028-05-29","Spring bank holiday"],["2028-08-07","Summer bank holiday"],["2028-11-30","St Andrew\u2019s Day"],["2028-12-25","Christmas Day"],["2028-12-26","Boxing Day"]],"ni":[["2025-01-01","New Year\u2019s Day"],["2025-03-17","St Patrick\u2019s Day"],["2025-04-18","Good Friday"],["2025-04-21","Easter Monday"],["2025-05-05","Early May bank holiday"],["2025-05-26","Spring bank holiday"],["2025-07-14","Battle of the Boyne (Orangemen\u2019s Day)"],["2025-08-25","Summer bank holiday"],["2025-12-25","Christmas Day"],["2025-12-26","Boxing Day"],["2026-01-01","New Year\u2019s Day"],["2026-03-17","St Patrick\u2019s Day"],["2026-04-03","Good Friday"],["2026-04-06","Easter Monday"],["2026-05-04","Early May bank holiday"],["2026-05-25","Spring bank holiday"],["2026-07-13","Battle of the Boyne (Orangemen\u2019s Day)"],["2026-08-31","Summer bank holiday"],["2026-12-25","Christmas Day"],["2026-12-28","Boxing Day"],["2027-01-01","New Year\u2019s Day"],["2027-03-17","St Patrick\u2019s Day"],["2027-03-26","Good Friday"],["2027-03-29","Easter Monday"],["2027-05-03","Early May bank holiday"],["2027-05-31","Spring bank holiday"],["2027-07-12","Battle of the Boyne (Orangemen\u2019s Day)"],["2027-08-30","Summer bank holiday"],["2027-12-27","Christmas Day"],["2027-12-28","Boxing Day"],["2028-01-03","New Year\u2019s Day"],["2028-03-17","St Patrick\u2019s Day"],["2028-04-14","Good Friday"],["2028-04-17","Easter Monday"],["2028-05-01","Early May bank holiday"],["2028-05-29","Spring bank holiday"],["2028-07-12","Battle of the Boyne (Orangemen\u2019s Day)"],["2028-08-28","Summer bank holiday"],["2028-12-25","Christmas Day"],["2028-12-26","Boxing Day"]]},
     dividend: { allowance: 500, basic: .1075, higher: .3575, additional: .3935 },
     nmw: { '2026': { from: '1 April 2026', a21: 12.71, a18: 10.85, u18: 8.00, app: 8.00 },
            '2025': { from: '1 April 2025', a21: 12.21, a18: 10.00, u18: 7.55, app: 7.55 } }
@@ -216,6 +220,37 @@
       dividendTax: d.tax, rows: d.rows, salaryTax: salaryTax, totalTax: r2(salaryTax + d.tax), effectiveDivRate: div ? r2(d.tax / div * 100) : 0 };
   }
 
-  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax, takeHome: takeHome, minWage: minWage, selfEmployed: selfEmployed, dividendTax: dividendTax, stacked: stacked };
+  function redundancy(o) {
+    var R = RATES.redundancy, age = Math.floor(+o.age || 0), yrs = Math.floor(+o.years || 0), pay = Math.max(0, +o.weeklyPay || 0);
+    var wk = Math.min(pay, R.weekCap), counted = Math.min(yrs, R.maxYears), weeks = 0, rows = { half: 0, one: 0, oneHalf: 0 };
+    if (yrs < R.minYears) return { eligible: false, total: 0, weeks: 0, weekPay: r2(wk), counted: counted, rows: rows };
+    for (var i = 0; i < counted; i++) { var a = age - 1 - i; if (a < 0) break; if (a < 22) { weeks += .5; rows.half++; } else if (a < 41) { weeks += 1; rows.one++; } else { weeks += 1.5; rows.oneHalf++; } }
+    return { eligible: true, weeks: weeks, weekPay: r2(wk), capped: pay > R.weekCap, counted: counted, rows: rows, total: r2(weeks * wk) };
+  }
+  function maternityPay(o) {
+    var S = RATES.smp, awe = Math.max(0, +o.awe || 0), first = r2(awe * .9), later = r2(Math.min(S.rate, awe * .9));
+    if (awe < S.lel) return { eligible: false, first: 0, later: 0, total: 0, lel: S.lel };
+    var t1 = r2(first * S.higherWeeks), t2 = r2(later * (S.weeks - S.higherWeeks));
+    return { eligible: true, first: first, later: later, firstTotal: t1, laterTotal: t2, total: r2(t1 + t2), lel: S.lel };
+  }
+  function holiday(o) {
+    var H = RATES.holiday, mode = o.mode || 'days', frac = o.months != null && o.months !== '' ? Math.min(12, Math.max(0, +o.months)) / 12 : 1;
+    if (mode === 'irregular') { var h = r2(Math.max(0, +o.hoursWorked || 0) * H.irregularPct); return { mode: mode, hours: h }; }
+    if (mode === 'hours') { var hpw = Math.max(0, +o.hoursPerWeek || 0), dpw = Math.min(5, Math.max(0, +o.daysPerWeek || 5)) || 5;
+      var cap = 28 * hpw / dpw; var full = Math.min(hpw * H.weeks, cap); return { mode: mode, hours: r2(full * frac), fullYear: r2(full) }; }
+    var d = Math.min(7, Math.max(0, +o.daysPerWeek || 0)), fy = Math.min(d * H.weeks, H.maxDays), v = fy * frac;
+    return { mode: 'days', days: r2(v), roundedUp: Math.ceil(v * 2) / 2, fullYear: r2(fy), capped: d * H.weeks > H.maxDays };
+  }
+  function workingDays(o) {
+    var P = function (s) { var a = String(s).split('-'); return Date.UTC(+a[0], +a[1] - 1, +a[2]); };
+    var a = P(o.start), b = P(o.end), DAY = 864e5; if (isNaN(a) || isNaN(b)) return null; var neg = b < a; if (neg) { var t = a; a = b; b = t; }
+    var list = RATES.bankHolidays[o.region || 'eng'] || [], set = {}; list.forEach(function (x) { set[P(x[0])] = x[1]; });
+    var days = 0, wk = 0, hols = [];
+    for (var d = a; d <= b; d += DAY) { days++; var w = new Date(d).getUTCDay(); if (w === 0 || w === 6) continue; if (set[d]) { hols.push([new Date(d).toISOString().slice(0, 10), set[d]]); continue; } wk++; }
+    if (o.excludeStart && days) { var w0 = new Date(a).getUTCDay(); days--; if (w0 && w0 < 6 && !set[a]) wk--; }
+    return { calendarDays: days, workingDays: wk, weekendDays: 0, bankHolidays: hols, weeks: r2(days / 7) };
+  }
+
+  var api = { RATES: RATES, banded: banded, stampDuty: stampDuty, studentLoan: studentLoan, vat: vat, mortgage: mortgage, carTax: carTax, takeHome: takeHome, minWage: minWage, selfEmployed: selfEmployed, dividendTax: dividendTax, stacked: stacked, redundancy: redundancy, maternityPay: maternityPay, holiday: holiday, workingDays: workingDays };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.UKCalc = api;
 })(this);
